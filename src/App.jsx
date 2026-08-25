@@ -1,0 +1,246 @@
+import React, { useState, useEffect } from 'react';
+import { 
+  ShieldCheck, 
+  Server, 
+  PlayCircle, 
+  Info,
+  FileJson,
+  Sun,
+  Moon
+} from 'lucide-react';
+import CustomDiagram from './components/CustomDiagram';
+import ComponentInspector from './components/ComponentInspector';
+import SimulationStepper from './components/SimulationStepper';
+import { SITES_DATA as INITIAL_SITES_DATA, LEGEND_ITEMS } from './data/diagramData';
+
+export default function App() {
+  const [mode, setMode] = useState('PR'); // 'PR' | 'DR'
+  const [theme, setTheme] = useState('light'); // 'light' (Clean Light Mode) | 'dark'
+  const [isConsoleOpen, setIsConsoleOpen] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
+  const [selectedComponent, setSelectedComponent] = useState(null);
+  const [showLegend, setShowLegend] = useState(false);
+  const [configSource, setConfigSource] = useState('active.json');
+  const [componentsConfig, setComponentsConfig] = useState(null);
+
+  // Synchronize body class for theme switching
+  useEffect(() => {
+    if (theme === 'light') {
+      document.body.classList.add('light-theme');
+    } else {
+      document.body.classList.remove('light-theme');
+    }
+  }, [theme]);
+
+  // Load dynamic active site configuration from active.json & components.json
+  useEffect(() => {
+    const fetchConfigs = () => {
+      // 1. Fetch active.json
+      fetch('/active.json?t=' + Date.now())
+        .then(res => res.json())
+        .then(data => {
+          if (data && (data.activeSite === 'PR' || data.activeSite === 'DR')) {
+            if (!isConsoleOpen) {
+              setMode(data.activeSite);
+            }
+            setConfigSource(`active.json & components.json (${data.activeSite})`);
+          }
+        })
+        .catch(err => console.error('Error reading active.json:', err));
+
+      // 2. Fetch components.json
+      fetch('/components.json?t=' + Date.now())
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.siteArchitecture) {
+            setComponentsConfig(data);
+          }
+        })
+        .catch(err => console.error('Error reading components.json:', err));
+    };
+
+    fetchConfigs();
+    const interval = setInterval(fetchConfigs, 4000); // Sync with active.json & components.json every 4s
+    return () => clearInterval(interval);
+  }, [isConsoleOpen]);
+
+  const activeSiteData = mode === 'DR' 
+    ? (componentsConfig?.siteArchitecture?.DR || INITIAL_SITES_DATA.DR) 
+    : (componentsConfig?.siteArchitecture?.PR || INITIAL_SITES_DATA.PR);
+
+  const handleSelectSite = (site) => {
+    setMode(site);
+    setIsConsoleOpen(false); // Close console when switching site explicitly
+  };
+
+  // Toggle Engineer Failover Console drawer
+  const handleToggleConsole = () => {
+    setIsConsoleOpen(prev => {
+      const nextState = !prev;
+      if (nextState) {
+        setActiveStep(0); // Reset step counter on opening console
+      }
+      return nextState;
+    });
+  };
+
+  // Callback when engineer completes final switchover step 11 inside console
+  const handleSwitchoverComplete = () => {
+    const newActiveMode = mode === 'PR' ? 'DR' : 'PR';
+    setMode(newActiveMode);
+    setActiveStep(0);
+  };
+
+  const diagramMode = isConsoleOpen ? 'SIMULATION' : mode;
+
+  return (
+    <div className="app-container">
+      {/* Streamlined Clean Top Navbar */}
+      <header className="top-navbar">
+        {/* Brand & Title */}
+        <div className="brand-section">
+          <div className="brand-logo">
+            <ShieldCheck size={20} />
+          </div>
+          <div className="brand-title">
+            <h1>SBI e-Rupee PR/DR Architecture</h1>
+          </div>
+        </div>
+
+        {/* Clean Segmented Mode Switcher with Togglable Engineer Console */}
+        <div className="mode-switcher">
+          <button 
+            className={`mode-btn ${mode === 'PR' && !isConsoleOpen ? 'active-pr' : ''}`}
+            onClick={() => handleSelectSite('PR')}
+          >
+            <Server size={14} />
+            <span>PR Active (Rawale)</span>
+          </button>
+
+          <button 
+            className={`mode-btn ${mode === 'DR' && !isConsoleOpen ? 'active-dr' : ''}`}
+            onClick={() => handleSelectSite('DR')}
+          >
+            <Server size={14} />
+            <span>DR Active (Gachibowli)</span>
+          </button>
+
+          {/* Togglable Engineer Failover Console Button */}
+          <button 
+            className={`mode-btn ${isConsoleOpen ? 'active-sim' : ''}`}
+            onClick={handleToggleConsole}
+          >
+            <PlayCircle size={14} />
+            <span>{isConsoleOpen ? 'Close Failover Console' : 'Engineer Failover Console'}</span>
+          </button>
+        </div>
+
+        {/* Clean Status Metrics & Theme Toggle */}
+        <div className="status-pills">
+          <div className="pill-item">
+            <span className="pill-label" style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+              <FileJson size={10} /> Active Config:
+            </span>
+            <span className="pill-value" style={{ color: mode === 'PR' ? 'var(--accent-pr)' : 'var(--accent-dr)' }}>
+              {configSource}
+            </span>
+          </div>
+
+          <div className="pill-item">
+            <span className="pill-label">DNS A-Record:</span>
+            <span className="pill-value" style={{ color: 'var(--accent-dr)' }}>
+              {activeSiteData.wafIp}
+            </span>
+          </div>
+
+          {/* Theme Toggle Button */}
+          <button 
+            className="theme-toggle-btn"
+            onClick={() => setTheme(prev => (prev === 'light' ? 'dark' : 'light'))}
+            title="Toggle Visual Theme"
+          >
+            {theme === 'light' ? <Moon size={14} /> : <Sun size={14} />}
+            <span>{theme === 'light' ? 'Dark Mode' : 'Clean Light Mode'}</span>
+          </button>
+        </div>
+      </header>
+
+      {/* Main Workspace */}
+      <main className="main-workspace">
+        {/* Custom Native React SVG Diagram Component */}
+        <CustomDiagram 
+          mode={diagramMode} 
+          activeStep={activeStep}
+          onSelectComponent={setSelectedComponent}
+          componentsConfig={componentsConfig}
+        />
+
+        {/* Legend Overlay Box */}
+        {showLegend && (
+          <div className="legend-box glass-panel">
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span className="legend-title">Diagram Legend</span>
+              <button 
+                style={{ background: 'transparent', border: 'none', color: 'var(--text-dim)', cursor: 'pointer' }}
+                onClick={() => setShowLegend(false)}
+              >
+                ×
+              </button>
+            </div>
+            <div className="legend-items-grid">
+              {LEGEND_ITEMS.map((item, idx) => (
+                <div key={idx} className="legend-item">
+                  <div className="legend-color-dot" style={{ backgroundColor: item.color }} />
+                  <span>{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {!showLegend && (
+          <button 
+            style={{
+              position: 'absolute',
+              bottom: 24,
+              left: 24,
+              zIndex: 30,
+              padding: '6px 12px',
+              borderRadius: '8px',
+              border: '1px solid var(--border-card)',
+              background: 'var(--bg-card)',
+              color: 'var(--text-muted)',
+              fontSize: '0.75rem',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px'
+            }}
+            onClick={() => setShowLegend(true)}
+          >
+            <Info size={14} /> Show Legend
+          </button>
+        )}
+
+        {/* Component Inspector Drawer */}
+        <ComponentInspector 
+          component={selectedComponent}
+          mode={mode}
+          onClose={() => setSelectedComponent(null)}
+        />
+
+        {/* Manual Engineer Switchover Console Panel */}
+        {isConsoleOpen && (
+          <SimulationStepper 
+            activeStep={activeStep}
+            setActiveStep={setActiveStep}
+            currentMode={mode}
+            onSwitchoverComplete={handleSwitchoverComplete}
+            onClose={() => setIsConsoleOpen(false)}
+            failoverSteps={componentsConfig?.failoverSteps}
+          />
+        )}
+      </main>
+    </div>
+  );
+}
