@@ -4,10 +4,10 @@ An interactive, real-time enterprise architecture dashboard visualizing the **Pr
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 - **Dual-Region Live Traffic Visualization**: Real-time animated traffic flow between Public Gateways, Web Application Firewalls (WAF), Public & Internal Load Balancers (PLB/ILB), Microservices, and Oracle Database Clusters.
-- **Bi-Directional Oracle Data Guard Sync**: Visualizes active replication from Rawale (PR) ➔ Gachibowli (DR) or vice-versa upon failover.
+- **Bi-Directional Oracle Data Guard Sync**: Visualizes active replication from Rawale (PR) -> Gachibowli (DR) or vice-versa upon failover.
 - **Dynamic Microservice Cluster**: Displays all 7 core RTSP applications (`rtsp-app`, `rtsp-pso`, `mint`, `BIG`, `AppBackend`, `Admin Portal`, `Merchant Portal`).
 - **Interactive Component Inspector**: Click any node on the SVG canvas to view IP addresses, domains, ports, SSL configurations, health checks, and role statuses in a slide-out drawer.
 - **Togglable Engineer Failover Console**: Integrated 2-column failover console drawer featuring an 11-step manual switchover timeline, step execution spotlight, live timestamped audit log terminal, and auto-run / step-advance controls.
@@ -16,7 +16,7 @@ An interactive, real-time enterprise architecture dashboard visualizing the **Pr
 
 ---
 
-## 🚀 Quick Start & Installation
+## Quick Start & Installation
 
 ### Prerequisites
 - **Node.js**: v18.0.0 or higher
@@ -52,30 +52,30 @@ An interactive, real-time enterprise architecture dashboard visualizing the **Pr
 
 ---
 
-## 💻 How to Use the Dashboard
+## How to Use the Dashboard
 
 ### 1. Switching Active Site
 Use the segmented buttons in the top navbar:
-- Click **`PR Active (Rawale)`**: Routes DNS target to `WAF-PR (10.x.x.252)`, animates green traffic flow down Rawale DC, and sets Data Guard replication `PR ➔ DR`.
-- Click **`DR Active (Gachibowli)`**: Routes DNS target to `WAF-DR (10.x.x.230)`, animates royal blue traffic flow down Gachibowli DC, and reverses Data Guard replication `DR ➔ PR`.
+- Click **`PR Active (Rawale)`**: Routes DNS target to `WAF-PR (10.x.x.252)`, animates green traffic flow down Rawale DC, and sets Data Guard replication `PR -> DR`.
+- Click **`DR Active (Gachibowli)`**: Routes DNS target to `WAF-DR (10.x.x.230)`, animates royal blue traffic flow down Gachibowli DC, and reverses Data Guard replication `DR -> PR`.
 
 ### 2. Running Manual Engineer Switchover
 1. Click **`Engineer Failover Console`** in the top navbar to open the console drawer.
 2. Click **`Complete Step & Advance`** to manually execute step-by-step failover procedures (Steps 1 through 11).
 3. Alternatively, click **`Auto Run`** to let the system automatically execute steps every 3 seconds.
 4. Watch live timestamped audit logs record engineer execution in the right terminal panel.
-5. Upon completing Step 11, the active infrastructure site automatically flips (`PR ➔ DR` or `DR ➔ PR`).
+5. Upon completing Step 11, the active infrastructure site automatically flips (`PR -> DR` or `DR -> PR`).
 6. Click **`Close Console ×`** or the top button to hide the drawer at any time.
 
 ### 3. Inspecting Component Specs
 Click any component card on the canvas (e.g. WAF, PLB, ILB, RTSP Core Services, Oracle DBs, or Common Services) to open the **Component Inspector** drawer on the right.
 
 ### 4. Toggling Visual Themes
-Click the **`Dark Mode / Clean Light Mode`** button (`Sun`/`Moon` icon) in the top navbar to toggle between Light Mode and Dark Mode.
+Click the **`Dark Mode / Clean Light Mode`** button in the top navbar to toggle between Light Mode and Dark Mode.
 
 ---
 
-## 🛠️ How to Modify & Customize Component Details (Zero Code Rebuilds)
+## How to Modify & Customize Component Details (Zero Code Rebuilds)
 
 All infrastructure details, microservice names, IP addresses, endpoints, common services, and failover steps are controlled by two JSON files located in the root and public directories:
 
@@ -167,7 +167,7 @@ To edit site architecture, IP addresses, microservices, databases, or common ser
 
 ---
 
-## 📁 Project File Structure
+## Project File Structure
 
 ```
 rtsp-dr-pr/
@@ -193,7 +193,7 @@ rtsp-dr-pr/
 
 ---
 
-## 🎯 Verification & Build Validation
+## Verification & Build Validation
 
 To verify the dashboard before deployment:
 
@@ -205,5 +205,5 @@ This compiles Vite production bundles into `dist/` with zero errors.
 
 ---
 
-## 📄 License & Maintainer
+## License & Maintainer
 Maintained for **SBI e-Rupee (CBDC) Enterprise Operations Team**.
