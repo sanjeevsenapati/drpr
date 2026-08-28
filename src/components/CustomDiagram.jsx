@@ -197,41 +197,54 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             </g>
           )}
 
-          {/* 11. PR App Cluster -> Common Services Column Line */}
-          <path 
-            d="M 400 497.5 L 540 497.5" 
-            fill="none" 
-            className={isPRActive ? "path-active-pr" : "path-static"}
-            markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
-          />
-          {isPRActive && (
-            <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-pr))' }}>
-              <circle r="3" fill="var(--accent-pr)">
-                <animateMotion path="M 400 497.5 L 540 497.5" dur="2.4s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
-              <circle r="3" fill="var(--accent-pr)">
-                <animateMotion path="M 400 497.5 L 540 497.5" dur="2.4s" begin="1.2s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
-            </g>
-          )}
+          {/* ============================================================ */}
+          {/* CONNECTING PRIMARY REGION (RAWALE DC) & DR REGION TO EACH COMMON SERVICE SECTION */}
+          {/* ============================================================ */}
+          {commonServicesList.map((svc, idx) => {
+            const targetY = 195 + idx * 42 + 18;
+            const prSvcPathD = `M 400 497.5 Q 460 497.5 460 ${targetY} L 540 ${targetY}`;
+            const drSvcPathD = `M 1000 497.5 Q 940 497.5 940 ${targetY} L 860 ${targetY}`;
 
-          {/* 12. DR App Cluster -> Common Services Column Line */}
-          <path 
-            d="M 1000 497.5 L 885 497.5" 
-            fill="none" 
-            className={isDRActive ? "path-active-dr" : "path-static"}
-            markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
-          />
-          {isDRActive && (
-            <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-dr))' }}>
-              <circle r="3" fill="var(--accent-dr)">
-                <animateMotion path="M 1000 497.5 L 885 497.5" dur="2.4s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
-              <circle r="3" fill="var(--accent-dr)">
-                <animateMotion path="M 1000 497.5 L 885 497.5" dur="2.4s" begin="1.2s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
-            </g>
-          )}
+            return (
+              <g key={`conn-${svc.id}`}>
+                {/* PR (Rawale DC) -> Common Service Section Connection Path */}
+                <path 
+                  d={prSvcPathD}
+                  fill="none" 
+                  className={isPRActive ? "path-active-pr" : "path-static"}
+                  markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
+                />
+                {isPRActive && (
+                  <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-pr))' }}>
+                    <circle r="2.5" fill="var(--accent-pr)">
+                      <animateMotion path={prSvcPathD} dur={`${2.0 + (idx % 3) * 0.4}s`} repeatCount="indefinite" calcMode="linear" />
+                    </circle>
+                    <circle r="2.5" fill="var(--accent-pr)">
+                      <animateMotion path={prSvcPathD} dur={`${2.0 + (idx % 3) * 0.4}s`} begin="1.0s" repeatCount="indefinite" calcMode="linear" />
+                    </circle>
+                  </g>
+                )}
+
+                {/* DR (Gachibowli DC) -> Common Service Section Connection Path */}
+                <path 
+                  d={drSvcPathD}
+                  fill="none" 
+                  className={isDRActive ? "path-active-dr" : "path-static"}
+                  markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
+                />
+                {isDRActive && (
+                  <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-dr))' }}>
+                    <circle r="2.5" fill="var(--accent-dr)">
+                      <animateMotion path={drSvcPathD} dur={`${2.0 + (idx % 3) * 0.4}s`} repeatCount="indefinite" calcMode="linear" />
+                    </circle>
+                    <circle r="2.5" fill="var(--accent-dr)">
+                      <animateMotion path={drSvcPathD} dur={`${2.0 + (idx % 3) * 0.4}s`} begin="1.0s" repeatCount="indefinite" calcMode="linear" />
+                    </circle>
+                  </g>
+                )}
+              </g>
+            );
+          })}
 
           {/* DYNAMIC VICE-VERSA ORACLE DATA GUARD REPLICATION LINE (Between Grouped DB Clusters) */}
           {isPRActive ? (
@@ -620,6 +633,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
 
           {commonServicesList.map((svc, idx) => {
             const yPos = 195 + idx * 42;
+            const activeColor = isPRActive ? "var(--accent-pr)" : "var(--accent-dr)";
             return (
               <g 
                 key={svc.id} 
@@ -632,13 +646,19 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
                   height="36" 
                   rx="8" 
                   fill="var(--svg-card-bg)" 
-                  stroke="var(--svg-card-stroke)" 
-                  strokeWidth="1" 
+                  stroke={isPRActive ? "var(--accent-pr)" : isDRActive ? "var(--accent-dr)" : "var(--svg-card-stroke)"} 
+                  strokeWidth="1.2" 
                 />
                 <circle cx="20" cy="18" r="9" fill="var(--accent-amber)" />
                 <text x="20" y="22" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="bold">{svc.number}</text>
-                <text x="38" y="22" fill="var(--svg-card-title)" fontSize="11" fontWeight="700" fontFamily="Outfit">{svc.name}</text>
-                <text x="160" y="22" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{svc.endpoint}</text>
+                <text x="36" y="22" fill="var(--svg-card-title)" fontSize="11" fontWeight="700" fontFamily="Outfit">{svc.name}</text>
+                <text x="145" y="22" fill="var(--svg-card-sub)" fontSize="9" fontFamily="JetBrains Mono">{svc.endpoint}</text>
+
+                {/* Connection Status Badge */}
+                <rect x="252" y="9" width="60" height="18" rx="4" fill={activeColor} opacity="0.15" />
+                <text x="282" y="21" textAnchor="middle" fill={activeColor} fontSize="8" fontWeight="700" fontFamily="Inter">
+                  {isPRActive ? '⚡ PR LINK' : '⚡ DR LINK'}
+                </text>
               </g>
             );
           })}
