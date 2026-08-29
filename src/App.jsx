@@ -35,8 +35,8 @@ export default function App() {
   // Load dynamic active site configuration from active.json & components.json
   useEffect(() => {
     const fetchConfigs = () => {
-      // 1. Fetch active.json
-      fetch('/active.json?t=' + Date.now())
+      // 1. Fetch active.json (relative path for file:// and web server support)
+      fetch('./active.json?t=' + Date.now())
         .then(res => res.json())
         .then(data => {
           if (data && (data.activeSite === 'PR' || data.activeSite === 'DR')) {
@@ -46,17 +46,17 @@ export default function App() {
             setConfigSource(`active.json & components.json (${data.activeSite})`);
           }
         })
-        .catch(err => console.error('Error reading active.json:', err));
+        .catch(err => console.warn('Local file or network read active.json (using default PR site):', err));
 
-      // 2. Fetch components.json
-      fetch('/components.json?t=' + Date.now())
+      // 2. Fetch components.json (relative path)
+      fetch('./components.json?t=' + Date.now())
         .then(res => res.json())
         .then(data => {
           if (data && data.siteArchitecture) {
             setComponentsConfig(data);
           }
         })
-        .catch(err => console.error('Error reading components.json:', err));
+        .catch(err => console.warn('Local file or network read components.json (using fallback config):', err));
     };
 
     fetchConfigs();

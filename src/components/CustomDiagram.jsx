@@ -363,7 +363,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           <g transform="translate(370, 8)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Mobile App', domain: 'erupeeapp.sbi.bank.in', type: 'Public Mobile App Gateway (iOS / Android)' })}>
             <rect width="320" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.5" />
             <g transform="translate(8, 4)">
-              <image href="/assets/mobile_banking_app_icon.jpg" width="42" height="42" clipPath="url(#clip-circle-lg)" />
+              <image href="./assets/mobile_banking_app_icon.jpg" width="42" height="42" clipPath="url(#clip-circle-lg)" />
             </g>
             <text x="60" y="22" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">
               📱 e-Rupee Mobile App
@@ -381,7 +381,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           <g transform="translate(710, 8)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Merchant Web Portal', domain: 'merchanterupee.sbi.bank.in', type: 'Public Merchant Web Gateway' })}>
             <rect width="320" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.5" />
             <g transform="translate(8, 4)">
-              <image href="/assets/mobile_banking_app_icon.jpg" width="42" height="42" clipPath="url(#clip-circle-lg)" />
+              <image href="./assets/mobile_banking_app_icon.jpg" width="42" height="42" clipPath="url(#clip-circle-lg)" />
             </g>
             <text x="60" y="22" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">
               🌐 e-Rupee Merchant Web
@@ -411,7 +411,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           <g transform="translate(150, 195)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'WAF', name: `Web Application Firewall (${prConfig?.wafName || 'WAF-PR-252'})`, ipPR: prConfig?.wafIp || '10.x.x.252', type: 'Edge Security' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="2" />
             <g transform="translate(5, 5)">
-              <image href="/assets/waf_security_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
+              <image href="./assets/waf_security_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
             </g>
             <text x="52" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">{prConfig?.wafName || 'WAF-PR-252'}</text>
             <text x="52" y="40" fill="var(--accent-pr)" fontSize="10" fontFamily="JetBrains Mono">{prConfig?.wafIp || '10.x.x.252'}</text>
@@ -421,7 +421,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           <g transform="translate(150, 275)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'PLB', name: 'Public Load Balancer (PR PLB)', domain: prConfig?.plbEndpoint || 'cbdc-plb.bank.sbi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
             <g transform="translate(5, 5)">
-              <image href="/assets/load_balancer_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
+              <image href="./assets/load_balancer_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
             </g>
             <text x="52" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">Public LB (PLB)</text>
             <text x="52" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{prConfig?.plbEndpoint || 'cbdc-plb.bank.sbi'}</text>
@@ -431,7 +431,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           <g transform="translate(150, 355)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'ILB', name: 'Internal Load Balancer (PR ILB)', domain: prConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
             <g transform="translate(5, 5)">
-              <image href="/assets/load_balancer_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
+              <image href="./assets/load_balancer_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
             </g>
             <text x="52" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">Internal LB (ILB)</text>
             <text x="52" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{prConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi'}</text>
@@ -443,7 +443,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             <text x="15" y="20" fill="var(--accent-pr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (PR)</text>
             
             <g transform="translate(255, 12)">
-              <image href="/assets/server_rack_icon.jpg" width="32" height="32" clipPath="url(#clip-circle)" />
+              <image href="./assets/server_rack_icon.jpg" width="32" height="32" clipPath="url(#clip-circle)" />
             </g>
 
             {/* Row 1 Applications */}
@@ -496,7 +496,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             <g transform="translate(12, 30)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'rtsp-db', name: 'RTSP DB (PR Rawale)', domain: 'cbdc-rtsp-db.bank.sbi', type: isPRActive ? 'Primary Relational DB (READ WRITE)' : 'Standby Relational DB (READ ONLY)' })}>
               <rect width="145" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isPRActive ? "var(--accent-pr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(4, 4)">
-                <image href="/assets/oracle_database_icon.jpg" width="30" height="30" clipPath="url(#clip-circle)" />
+                <image href="./assets/oracle_database_icon.jpg" width="30" height="30" clipPath="url(#clip-circle)" />
               </g>
               <text x="38" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-rtsp-db</text>
               <text x="8" y="44" fill={isPRActive ? "var(--accent-pr)" : "var(--svg-card-sub)"} fontSize="9" fontWeight="600" fontFamily="Inter">
@@ -511,7 +511,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             <g transform="translate(170, 30)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'mint-db', name: 'Mint DB (PR Rawale)', domain: 'cbdc-mint-db.bank.sbi', type: isPRActive ? 'Primary Mint DB (READ WRITE)' : 'Standby Mint DB (READ ONLY)' })}>
               <rect width="145" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isPRActive ? "var(--accent-pr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(4, 4)">
-                <image href="/assets/oracle_database_icon.jpg" width="30" height="30" clipPath="url(#clip-circle)" />
+                <image href="./assets/oracle_database_icon.jpg" width="30" height="30" clipPath="url(#clip-circle)" />
               </g>
               <text x="38" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-mint-db</text>
               <text x="8" y="44" fill={isPRActive ? "var(--accent-pr)" : "var(--svg-card-sub)"} fontSize="9" fontWeight="600" fontFamily="Inter">
@@ -531,7 +531,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           <g transform="translate(1050, 195)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'WAF', name: `Web Application Firewall (${drConfig?.wafName || 'WAF-DR-230'})`, ipDR: drConfig?.wafIp || '10.x.x.230', type: 'Edge Security' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="2" />
             <g transform="translate(5, 5)">
-              <image href="/assets/waf_security_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
+              <image href="./assets/waf_security_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
             </g>
             <text x="52" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">{drConfig?.wafName || 'WAF-DR-230'}</text>
             <text x="52" y="40" fill="var(--accent-dr)" fontSize="10" fontFamily="JetBrains Mono">{drConfig?.wafIp || '10.x.x.230'}</text>
@@ -541,7 +541,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           <g transform="translate(1050, 275)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'PLB', name: 'Public Load Balancer (DR PLB)', domain: drConfig?.plbEndpoint || 'cbdc-plb.bank.sbi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <g transform="translate(5, 5)">
-              <image href="/assets/load_balancer_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
+              <image href="./assets/load_balancer_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
             </g>
             <text x="52" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">Public LB (PLB)</text>
             <text x="52" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{drConfig?.plbEndpoint || 'cbdc-plb.bank.sbi'}</text>
@@ -551,7 +551,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           <g transform="translate(1050, 355)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'ILB', name: 'Internal Load Balancer (DR ILB)', domain: drConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <g transform="translate(5, 5)">
-              <image href="/assets/load_balancer_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
+              <image href="./assets/load_balancer_icon.jpg" width="40" height="40" clipPath="url(#clip-circle)" />
             </g>
             <text x="52" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">Internal LB (ILB)</text>
             <text x="52" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{drConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi'}</text>
@@ -563,7 +563,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             <text x="15" y="20" fill="var(--accent-dr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (DR)</text>
             
             <g transform="translate(255, 12)">
-              <image href="/assets/server_rack_icon.jpg" width="32" height="32" clipPath="url(#clip-circle)" />
+              <image href="./assets/server_rack_icon.jpg" width="32" height="32" clipPath="url(#clip-circle)" />
             </g>
 
             {/* Row 1 Applications */}
@@ -616,7 +616,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             <g transform="translate(12, 30)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'rtsp-db', name: 'RTSP DB (DR Gachibowli)', domain: 'cbdc-rtsp-db.bank.sbi', type: isDRActive ? 'Primary Relational DB (READ WRITE)' : 'Standby Relational DB (READ ONLY)' })}>
               <rect width="145" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isDRActive ? "var(--accent-dr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(4, 4)">
-                <image href="/assets/oracle_database_icon.jpg" width="30" height="30" clipPath="url(#clip-circle)" />
+                <image href="./assets/oracle_database_icon.jpg" width="30" height="30" clipPath="url(#clip-circle)" />
               </g>
               <text x="38" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-rtsp-db</text>
               <text x="8" y="44" fill={isDRActive ? "var(--accent-dr)" : "var(--svg-card-sub)"} fontSize="9" fontWeight="600" fontFamily="Inter">
@@ -631,7 +631,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             <g transform="translate(170, 30)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'mint-db', name: 'Mint DB (DR Gachibowli)', domain: 'cbdc-mint-db.bank.sbi', type: isDRActive ? 'Primary Mint DB (READ WRITE)' : 'Standby Mint DB (READ ONLY)' })}>
               <rect width="145" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isDRActive ? "var(--accent-dr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(4, 4)">
-                <image href="/assets/oracle_database_icon.jpg" width="30" height="30" clipPath="url(#clip-circle)" />
+                <image href="./assets/oracle_database_icon.jpg" width="30" height="30" clipPath="url(#clip-circle)" />
               </g>
               <text x="38" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-mint-db</text>
               <text x="8" y="44" fill={isDRActive ? "var(--accent-dr)" : "var(--svg-card-sub)"} fontSize="9" fontWeight="600" fontFamily="Inter">
