@@ -10,11 +10,11 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
   const drConfig = componentsConfig?.siteArchitecture?.DR;
 
   // Rounded Corner Traffic Flow Paths (Mobile App & Merchant Web -> DNS Target -> WAF-PR / WAF-DR)
-  const appToPrPathD = "M 530 64 L 530 71 Q 530 78 542 78 L 688 78 Q 700 78 700 90 L 700 123 Q 700 135 688 135 L 262 135 Q 250 135 250 147 L 250 195";
-  const webToPrPathD = "M 870 64 L 870 71 Q 870 78 858 78 L 712 78 Q 700 78 700 90 L 700 123 Q 700 135 688 135 L 262 135 Q 250 135 250 147 L 250 195";
+  const appToPrPathD = "M 530 58 L 530 75 Q 530 87 545 87 L 685 87 Q 700 87 700 105 L 700 139 Q 700 155 685 155 L 265 155 Q 250 155 250 170 L 250 195";
+  const webToPrPathD = "M 870 58 L 870 75 Q 870 87 855 87 L 715 87 Q 700 87 700 105 L 700 139 Q 700 155 685 155 L 265 155 Q 250 155 250 170 L 250 195";
 
-  const appToDrPathD = "M 530 64 L 530 71 Q 530 78 542 78 L 688 78 Q 700 78 700 90 L 700 123 Q 700 135 712 135 L 1138 135 Q 1150 135 1150 147 L 1150 195";
-  const webToDrPathD = "M 870 64 L 870 71 Q 870 78 858 78 L 712 78 Q 700 78 700 90 L 700 123 Q 700 135 712 135 L 1138 135 Q 1150 135 1150 147 L 1150 195";
+  const appToDrPathD = "M 530 58 L 530 75 Q 530 87 545 87 L 685 87 Q 700 87 700 105 L 700 139 Q 700 155 715 155 L 1135 155 Q 1150 155 1150 170 L 1150 195";
+  const webToDrPathD = "M 870 58 L 870 75 Q 870 87 855 87 L 715 87 Q 700 87 700 105 L 700 139 Q 700 155 715 155 L 1135 155 Q 1150 155 1150 170 L 1150 195";
 
   return (
     <div className="svg-canvas-container" style={{ overflow: 'hidden' }}>
@@ -382,47 +382,47 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* ============================================================ */}
 
           {/* 1. e-Rupee Mobile App Card */}
-          <g transform="translate(370, 12)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Mobile App', domain: 'erupeeapp.sbi.bank.in', type: 'Public Mobile App Gateway (iOS / Android)' })}>
-            <rect width="320" height="52" rx="10" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.5" />
-            <g transform="translate(8, 5)">
+          <g transform="translate(370, 8)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Mobile App', domain: 'erupeeapp.sbi.bank.in', type: 'Public Mobile App Gateway (iOS / Android)' })}>
+            <rect width="320" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.5" />
+            <g transform="translate(8, 4)">
               <image href="/assets/mobile_banking_app_icon.jpg" width="42" height="42" clipPath="url(#clip-circle-lg)" />
             </g>
-            <text x="60" y="23" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">
+            <text x="60" y="22" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">
               📱 e-Rupee Mobile App
             </text>
-            <text x="60" y="39" fill="var(--svg-card-sub)" fontSize="9.5" fontFamily="JetBrains Mono">
+            <text x="60" y="38" fill="var(--svg-card-sub)" fontSize="9.5" fontFamily="JetBrains Mono">
               erupeeapp.sbi.bank.in
             </text>
-            <rect x="232" y="16" width="76" height="20" rx="4" fill="var(--accent-pr)" opacity="0.15" />
-            <text x="270" y="30" textAnchor="middle" fill="var(--accent-pr)" fontSize="8.5" fontWeight="700" fontFamily="Inter">
+            <rect x="232" y="15" width="76" height="20" rx="4" fill="var(--accent-pr)" opacity="0.15" />
+            <text x="270" y="29" textAnchor="middle" fill="var(--accent-pr)" fontSize="8.5" fontWeight="700" fontFamily="Inter">
               MOBILE APP
             </text>
           </g>
 
           {/* 2. e-Rupee Merchant Web Portal Card */}
-          <g transform="translate(710, 12)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Merchant Web Portal', domain: 'merchanterupee.sbi.bank.in', type: 'Public Merchant Web Gateway' })}>
-            <rect width="320" height="52" rx="10" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.5" />
-            <g transform="translate(8, 5)">
+          <g transform="translate(710, 8)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Merchant Web Portal', domain: 'merchanterupee.sbi.bank.in', type: 'Public Merchant Web Gateway' })}>
+            <rect width="320" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.5" />
+            <g transform="translate(8, 4)">
               <image href="/assets/mobile_banking_app_icon.jpg" width="42" height="42" clipPath="url(#clip-circle-lg)" />
             </g>
-            <text x="60" y="23" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">
+            <text x="60" y="22" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">
               🌐 e-Rupee Merchant Web
             </text>
-            <text x="60" y="39" fill="var(--svg-card-sub)" fontSize="9.5" fontFamily="JetBrains Mono">
+            <text x="60" y="38" fill="var(--svg-card-sub)" fontSize="9.5" fontFamily="JetBrains Mono">
               merchanterupee.sbi.bank.in
             </text>
-            <rect x="232" y="16" width="76" height="20" rx="4" fill="var(--accent-dr)" opacity="0.15" />
-            <text x="270" y="30" textAnchor="middle" fill="var(--accent-dr)" fontSize="8.5" fontWeight="700" fontFamily="Inter">
+            <rect x="232" y="15" width="76" height="20" rx="4" fill="var(--accent-dr)" opacity="0.15" />
+            <text x="270" y="29" textAnchor="middle" fill="var(--accent-dr)" fontSize="8.5" fontWeight="700" fontFamily="Inter">
               WEB PORTAL
             </text>
           </g>
 
           {/* Connector Paths from App & Web Cards into DNS Router Box */}
-          <path d="M 530 64 L 530 78 Q 530 80 545 80 L 560 80" fill="none" stroke="var(--border-card)" strokeWidth="1.5" strokeDasharray="4 3" />
-          <path d="M 870 64 L 870 78 Q 870 80 855 80 L 840 80" fill="none" stroke="var(--border-card)" strokeWidth="1.5" strokeDasharray="4 3" />
+          <path d="M 530 58 L 530 87 Q 530 87 545 87 L 560 87" fill="none" stroke="var(--border-card)" strokeWidth="1.5" strokeDasharray="4 3" />
+          <path d="M 870 58 L 870 87 Q 870 87 855 87 L 840 87" fill="none" stroke="var(--border-card)" strokeWidth="1.5" strokeDasharray="4 3" />
 
           {/* DNS Router Box */}
-          <g transform="translate(560, 78)">
+          <g transform="translate(560, 105)">
             <rect width="280" height="34" rx="8" fill="var(--svg-pill-bg)" stroke="var(--accent-amber)" strokeWidth="1.5" />
             <text x="140" y="21" textAnchor="middle" fill="var(--accent-amber)" fontSize="11" fontWeight="600" fontFamily="Inter">
               🌐 DNS Target: {isPRActive ? (prConfig?.wafName || 'WAF-PR (10.x.x.252)') : (drConfig?.wafName || 'WAF-DR (10.x.x.230)')}
