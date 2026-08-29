@@ -61,72 +61,50 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </defs>
 
           {/* ============================================================ */}
-          {/* LAYER 1: ROUNDED CONNECTOR LINES WITH SLOW SMOOTH MOTION */}
+          {/* LAYER 1: ACTIVE ROUNDED TRAFFIC CONNECTOR LINES */}
           {/* ============================================================ */}
 
-          {/* 1A. Mobile App -> DNS Target -> PR WAF Line */}
-          <path 
-            d={appToPrPathD}
-            fill="none" 
-            className={isPRActive ? "path-active-pr" : "path-static"}
-            markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
-          />
-          {/* 1B. Merchant Web -> DNS Target -> PR WAF Line */}
-          <path 
-            d={webToPrPathD}
-            fill="none" 
-            className={isPRActive ? "path-active-pr" : "path-static"}
-            markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
-          />
-
-          {/* Animated Particles along PR Active Traffic Paths */}
+          {/* PR Active Traffic Paths (Mobile App & Merchant Web -> DNS Target -> WAF-PR-252) */}
           {isPRActive && (
-            <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-pr))' }}>
-              <circle r="3" fill="var(--accent-pr)">
-                <animateMotion path={appToPrPathD} dur="3.6s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
-              <circle r="3" fill="var(--accent-pr)">
-                <animateMotion path={appToPrPathD} dur="3.6s" begin="1.8s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
-              <circle r="3" fill="var(--accent-pr)">
-                <animateMotion path={webToPrPathD} dur="3.6s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
-              <circle r="3" fill="var(--accent-pr)">
-                <animateMotion path={webToPrPathD} dur="3.6s" begin="1.8s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
+            <g>
+              <path d={appToPrPathD} fill="none" className="path-active-pr" markerEnd="url(#arrow-pr)" />
+              <path d={webToPrPathD} fill="none" className="path-active-pr" markerEnd="url(#arrow-pr)" />
+              <g style={{ filter: 'drop-shadow(0 0 5px var(--accent-pr))' }}>
+                <circle r="3.5" fill="var(--accent-pr)">
+                  <animateMotion path={appToPrPathD} dur="3.0s" repeatCount="indefinite" calcMode="linear" />
+                </circle>
+                <circle r="3.5" fill="var(--accent-pr)">
+                  <animateMotion path={appToPrPathD} dur="3.0s" begin="1.5s" repeatCount="indefinite" calcMode="linear" />
+                </circle>
+                <circle r="3.5" fill="var(--accent-pr)">
+                  <animateMotion path={webToPrPathD} dur="3.0s" repeatCount="indefinite" calcMode="linear" />
+                </circle>
+                <circle r="3.5" fill="var(--accent-pr)">
+                  <animateMotion path={webToPrPathD} dur="3.0s" begin="1.5s" repeatCount="indefinite" calcMode="linear" />
+                </circle>
+              </g>
             </g>
           )}
 
-          {/* 2A. Mobile App -> DNS Target -> DR WAF Line */}
-          <path 
-            d={appToDrPathD}
-            fill="none" 
-            className={isDRActive ? "path-active-dr" : "path-static"}
-            markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
-          />
-          {/* 2B. Merchant Web -> DNS Target -> DR WAF Line */}
-          <path 
-            d={webToDrPathD}
-            fill="none" 
-            className={isDRActive ? "path-active-dr" : "path-static"}
-            markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
-          />
-
-          {/* Animated Particles along DR Active Traffic Paths */}
+          {/* DR Active Traffic Paths (Mobile App & Merchant Web -> DNS Target -> WAF-DR-230) */}
           {isDRActive && (
-            <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-dr))' }}>
-              <circle r="3" fill="var(--accent-dr)">
-                <animateMotion path={appToDrPathD} dur="3.6s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
-              <circle r="3" fill="var(--accent-dr)">
-                <animateMotion path={appToDrPathD} dur="3.6s" begin="1.8s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
-              <circle r="3" fill="var(--accent-dr)">
-                <animateMotion path={webToDrPathD} dur="3.6s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
-              <circle r="3" fill="var(--accent-dr)">
-                <animateMotion path={webToDrPathD} dur="3.6s" begin="1.8s" repeatCount="indefinite" calcMode="linear" />
-              </circle>
+            <g>
+              <path d={appToDrPathD} fill="none" className="path-active-dr" markerEnd="url(#arrow-dr)" />
+              <path d={webToDrPathD} fill="none" className="path-active-dr" markerEnd="url(#arrow-dr)" />
+              <g style={{ filter: 'drop-shadow(0 0 5px var(--accent-dr))' }}>
+                <circle r="3.5" fill="var(--accent-dr)">
+                  <animateMotion path={appToDrPathD} dur="3.0s" repeatCount="indefinite" calcMode="linear" />
+                </circle>
+                <circle r="3.5" fill="var(--accent-dr)">
+                  <animateMotion path={appToDrPathD} dur="3.0s" begin="1.5s" repeatCount="indefinite" calcMode="linear" />
+                </circle>
+                <circle r="3.5" fill="var(--accent-dr)">
+                  <animateMotion path={webToDrPathD} dur="3.0s" repeatCount="indefinite" calcMode="linear" />
+                </circle>
+                <circle r="3.5" fill="var(--accent-dr)">
+                  <animateMotion path={webToDrPathD} dur="3.0s" begin="1.5s" repeatCount="indefinite" calcMode="linear" />
+                </circle>
+              </g>
             </g>
           )}
 
@@ -416,10 +394,6 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               WEB PORTAL
             </text>
           </g>
-
-          {/* Connector Paths from App & Web Cards into DNS Router Box */}
-          <path d="M 530 58 L 530 87 Q 530 87 545 87 L 560 87" fill="none" stroke="var(--border-card)" strokeWidth="1.5" strokeDasharray="4 3" />
-          <path d="M 870 58 L 870 87 Q 870 87 855 87 L 840 87" fill="none" stroke="var(--border-card)" strokeWidth="1.5" strokeDasharray="4 3" />
 
           {/* DNS Router Box */}
           <g transform="translate(560, 105)">
