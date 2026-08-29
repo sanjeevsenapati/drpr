@@ -135,25 +135,8 @@ export default function App() {
           </button>
         </div>
 
-        {/* Clean Status Metrics & Theme Toggle */}
+        {/* Clean Theme Toggle */}
         <div className="status-pills">
-          <div className="pill-item">
-            <span className="pill-label" style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
-              <FileJson size={10} /> Active Config:
-            </span>
-            <span className="pill-value" style={{ color: mode === 'PR' ? 'var(--accent-pr)' : 'var(--accent-dr)' }}>
-              {configSource}
-            </span>
-          </div>
-
-          <div className="pill-item">
-            <span className="pill-label">DNS A-Record:</span>
-            <span className="pill-value" style={{ color: 'var(--accent-dr)' }}>
-              {activeSiteData.wafIp}
-            </span>
-          </div>
-
-          {/* Theme Toggle Button */}
           <button 
             className="theme-toggle-btn"
             onClick={() => setTheme(prev => (prev === 'light' ? 'dark' : 'light'))}
