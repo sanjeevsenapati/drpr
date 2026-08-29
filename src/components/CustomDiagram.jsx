@@ -488,8 +488,8 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
 
           {/* PR RTSP CORE SERVICES APPLICATION VM CLUSTER */}
           <g transform="translate(100, 435)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'RTSP Core Services Cluster (PR)', type: 'Microservice Cluster (7 Applications)', status: 'RUNNING' })}>
-            <rect width="300" height="125" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
-            <text x="15" y="20" fill="var(--accent-pr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (PR)</text>
+            <rect width="300" height="130" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
+            <text x="15" y="22" fill="var(--accent-pr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (PR)</text>
             
             <g transform="translate(258, 8)">
               <rect width="30" height="30" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -498,42 +498,42 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               </g>
             </g>
 
-            {/* Row 1 Applications */}
-            <g transform="translate(12, 30)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">📱 rtsp-app</text>
+            {/* Row 1 Applications (Symmetrical 3-Column Grid) */}
+            <g transform="translate(12, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📱 rtsp-app</text>
             </g>
 
-            <g transform="translate(105, 30)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">⚙️ rtsp-pso</text>
+            <g transform="translate(107, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">⚙️ rtsp-pso</text>
             </g>
 
-            <g transform="translate(198, 30)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🪙 mint</text>
+            <g transform="translate(202, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🪙 mint</text>
             </g>
 
-            {/* Row 2 Applications */}
-            <g transform="translate(12, 60)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🏦 BIG</text>
+            {/* Row 2 Applications (Symmetrical 3-Column Grid) */}
+            <g transform="translate(12, 65)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🏦 BIG</text>
             </g>
 
-            <g transform="translate(105, 60)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">💻 AppBackend</text>
+            <g transform="translate(107, 65)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">💻 AppBackend</text>
             </g>
 
-            <g transform="translate(198, 60)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">📊 Admin Portal</text>
+            <g transform="translate(202, 65)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📊 Admin Portal</text>
             </g>
 
-            {/* Row 3 Application */}
-            <g transform="translate(85, 90)">
-              <rect width="130" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="65" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🛍️ Merchant Portal</text>
+            {/* Row 3 Application (Centered 150px Wide Card) */}
+            <g transform="translate(75, 96)">
+              <rect width="150" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="75" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🛍️ Merchant Portal</text>
             </g>
           </g>
 
@@ -546,14 +546,14 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
 
             {/* Inside PR RTSP DB */}
             <g transform="translate(12, 30)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'rtsp-db', name: 'RTSP DB (PR Rawale)', domain: 'cbdc-rtsp-db.bank.sbi', type: isPRActive ? 'Primary Relational DB (READ WRITE)' : 'Standby Relational DB (READ ONLY)' })}>
-              <rect width="145" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isPRActive ? "var(--accent-pr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
+              <rect width="148" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isPRActive ? "var(--accent-pr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(8, 8)">
                 <rect width="28" height="28" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
                 <g transform="translate(-1, -2)" color="var(--accent-amber)">
                   <use href="#icon-database" />
                 </g>
               </g>
-              <text x="40" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-rtsp-db</text>
+              <text x="42" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-rtsp-db</text>
               <text x="8" y="44" fill={isPRActive ? "var(--accent-pr)" : "var(--svg-card-sub)"} fontSize="9" fontWeight="600" fontFamily="Inter">
                 {isPRActive ? 'READ WRITE' : 'READ-ONLY'}
               </text>
@@ -564,14 +564,14 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
 
             {/* Inside PR Mint DB */}
             <g transform="translate(170, 30)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'mint-db', name: 'Mint DB (PR Rawale)', domain: 'cbdc-mint-db.bank.sbi', type: isPRActive ? 'Primary Mint DB (READ WRITE)' : 'Standby Mint DB (READ ONLY)' })}>
-              <rect width="145" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isPRActive ? "var(--accent-pr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
+              <rect width="148" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isPRActive ? "var(--accent-pr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(8, 8)">
                 <rect width="28" height="28" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
                 <g transform="translate(-1, -2)" color="var(--accent-amber)">
                   <use href="#icon-database" />
                 </g>
               </g>
-              <text x="40" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-mint-db</text>
+              <text x="42" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-mint-db</text>
               <text x="8" y="44" fill={isPRActive ? "var(--accent-pr)" : "var(--svg-card-sub)"} fontSize="9" fontWeight="600" fontFamily="Inter">
                 {isPRActive ? 'READ WRITE' : 'READ-ONLY'}
               </text>
@@ -626,8 +626,8 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
 
           {/* DR RTSP CORE SERVICES APPLICATION VM CLUSTER */}
           <g transform="translate(1000, 435)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'RTSP Core Services Cluster (DR Gachibowli)', type: 'Microservice Cluster (7 Applications)', status: isDRActive ? 'RUNNING' : 'STANDBY' })}>
-            <rect width="300" height="125" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
-            <text x="15" y="20" fill="var(--accent-dr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (DR)</text>
+            <rect width="300" height="130" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
+            <text x="15" y="22" fill="var(--accent-dr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (DR)</text>
             
             <g transform="translate(258, 8)">
               <rect width="30" height="30" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -636,42 +636,42 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               </g>
             </g>
 
-            {/* Row 1 Applications */}
-            <g transform="translate(12, 30)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">📱 rtsp-app</text>
+            {/* Row 1 Applications (Symmetrical 3-Column Grid) */}
+            <g transform="translate(12, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📱 rtsp-app</text>
             </g>
 
-            <g transform="translate(105, 30)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">⚙️ rtsp-pso</text>
+            <g transform="translate(107, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">⚙️ rtsp-pso</text>
             </g>
 
-            <g transform="translate(198, 30)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🪙 mint</text>
+            <g transform="translate(202, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🪙 mint</text>
             </g>
 
-            {/* Row 2 Applications */}
-            <g transform="translate(12, 60)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🏦 BIG</text>
+            {/* Row 2 Applications (Symmetrical 3-Column Grid) */}
+            <g transform="translate(12, 65)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🏦 BIG</text>
             </g>
 
-            <g transform="translate(105, 60)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">💻 AppBackend</text>
+            <g transform="translate(107, 65)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">💻 AppBackend</text>
             </g>
 
-            <g transform="translate(198, 60)">
-              <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">📊 Admin Portal</text>
+            <g transform="translate(202, 65)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📊 Admin Portal</text>
             </g>
 
-            {/* Row 3 Application */}
-            <g transform="translate(85, 90)">
-              <rect width="130" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="65" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🛍️ Merchant Portal</text>
+            {/* Row 3 Application (Centered 150px Wide Card) */}
+            <g transform="translate(75, 96)">
+              <rect width="150" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="75" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🛍️ Merchant Portal</text>
             </g>
           </g>
 
@@ -684,14 +684,14 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
 
             {/* Inside DR RTSP DB */}
             <g transform="translate(12, 30)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'rtsp-db', name: 'RTSP DB (DR Gachibowli)', domain: 'cbdc-rtsp-db.bank.sbi', type: isDRActive ? 'Primary Relational DB (READ WRITE)' : 'Standby Relational DB (READ ONLY)' })}>
-              <rect width="145" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isDRActive ? "var(--accent-dr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
+              <rect width="148" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isDRActive ? "var(--accent-dr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(8, 8)">
                 <rect width="28" height="28" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
                 <g transform="translate(-1, -2)" color="var(--accent-amber)">
                   <use href="#icon-database" />
                 </g>
               </g>
-              <text x="40" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-rtsp-db</text>
+              <text x="42" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-rtsp-db</text>
               <text x="8" y="44" fill={isDRActive ? "var(--accent-dr)" : "var(--svg-card-sub)"} fontSize="9" fontWeight="600" fontFamily="Inter">
                 {isDRActive ? 'READ WRITE' : 'READ-ONLY'}
               </text>
@@ -702,14 +702,14 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
 
             {/* Inside DR Mint DB */}
             <g transform="translate(170, 30)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'mint-db', name: 'Mint DB (DR Gachibowli)', domain: 'cbdc-mint-db.bank.sbi', type: isDRActive ? 'Primary Mint DB (READ WRITE)' : 'Standby Mint DB (READ ONLY)' })}>
-              <rect width="145" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isDRActive ? "var(--accent-dr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
+              <rect width="148" height="70" rx="8" fill="var(--svg-pill-bg)" stroke={isDRActive ? "var(--accent-dr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(8, 8)">
                 <rect width="28" height="28" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
                 <g transform="translate(-1, -2)" color="var(--accent-amber)">
                   <use href="#icon-database" />
                 </g>
               </g>
-              <text x="40" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-mint-db</text>
+              <text x="42" y="20" fill="var(--svg-pill-text)" fontSize="10" fontWeight="700" fontFamily="Outfit">cbdc-mint-db</text>
               <text x="8" y="44" fill={isDRActive ? "var(--accent-dr)" : "var(--svg-card-sub)"} fontSize="9" fontWeight="600" fontFamily="Inter">
                 {isDRActive ? 'READ WRITE' : 'READ-ONLY'}
               </text>
