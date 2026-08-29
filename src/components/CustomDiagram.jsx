@@ -201,7 +201,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* CONNECTING PRIMARY REGION (RAWALE DC) & DR REGION TO EACH COMMON SERVICE SECTION */}
           {/* ============================================================ */}
           {commonServicesList.map((svc, idx) => {
-            const targetY = 195 + idx * 42 + 18;
+            const targetY = 192 + idx * 44 + 17.5;
             const prSvcPathD = `M 400 497.5 Q 460 497.5 460 ${targetY} L 540 ${targetY}`;
             const drSvcPathD = `M 1000 497.5 Q 940 497.5 940 ${targetY} L 860 ${targetY}`;
 
@@ -337,15 +337,15 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           <g transform="translate(515, 175)">
             <rect 
               width="370" 
-              height="420" 
+              height="435" 
               rx="16" 
               fill="var(--svg-region-cs-bg)" 
               stroke="var(--accent-amber)" 
               strokeWidth="1.5" 
               strokeDasharray="8 4"
             />
-            <rect x="70" y="406" width="230" height="26" rx="6" fill="var(--accent-amber)" stroke="var(--accent-amber)" />
-            <text x="185" y="423" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
+            <rect x="70" y="422" width="230" height="26" rx="6" fill="var(--accent-amber)" stroke="var(--accent-amber)" />
+            <text x="185" y="439" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
               COMMON SERVICES (SHARED VMN)
             </text>
           </g>
@@ -632,7 +632,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* ============================================================ */}
 
           {commonServicesList.map((svc, idx) => {
-            const yPos = 195 + idx * 42;
+            const yPos = 192 + idx * 44;
             const activeColor = isPRActive ? "var(--accent-pr)" : "var(--accent-dr)";
             return (
               <g 
@@ -643,20 +643,20 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               >
                 <rect 
                   width="320" 
-                  height="36" 
+                  height="35" 
                   rx="8" 
                   fill="var(--svg-card-bg)" 
                   stroke={isPRActive ? "var(--accent-pr)" : isDRActive ? "var(--accent-dr)" : "var(--svg-card-stroke)"} 
                   strokeWidth="1.2" 
                 />
-                <circle cx="20" cy="18" r="9" fill="var(--accent-amber)" />
-                <text x="20" y="22" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="bold">{svc.number}</text>
-                <text x="36" y="22" fill="var(--svg-card-title)" fontSize="11" fontWeight="700" fontFamily="Outfit">{svc.name}</text>
-                <text x="145" y="22" fill="var(--svg-card-sub)" fontSize="9" fontFamily="JetBrains Mono">{svc.endpoint}</text>
+                <circle cx="20" cy="17.5" r="9" fill="var(--accent-amber)" />
+                <text x="20" y="21.5" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="bold">{svc.number}</text>
+                <text x="36" y="21.5" fill="var(--svg-card-title)" fontSize="11" fontWeight="700" fontFamily="Outfit">{svc.name}</text>
+                <text x="145" y="21.5" fill="var(--svg-card-sub)" fontSize="9" fontFamily="JetBrains Mono">{svc.endpoint}</text>
 
                 {/* Connection Status Badge */}
-                <rect x="252" y="9" width="60" height="18" rx="4" fill={activeColor} opacity="0.15" />
-                <text x="282" y="21" textAnchor="middle" fill={activeColor} fontSize="8" fontWeight="700" fontFamily="Inter">
+                <rect x="252" y="8.5" width="60" height="18" rx="4" fill={activeColor} opacity="0.15" />
+                <text x="282" y="20.5" textAnchor="middle" fill={activeColor} fontSize="8" fontWeight="700" fontFamily="Inter">
                   {isPRActive ? '⚡ PR LINK' : '⚡ DR LINK'}
                 </text>
               </g>

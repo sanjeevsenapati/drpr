@@ -263,18 +263,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 24px;
+  padding: 10px 32px;
   background: rgba(7, 10, 18, 0.95);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-card);
   z-index: 50;
   height: 60px;
+  gap: 24px;
 }
 
 .brand-section {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .brand-logo {
@@ -305,7 +306,7 @@ body {
   padding: 4px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-card);
-  gap: 4px;
+  gap: 6px;
 }
 
 .mode-btn {
@@ -371,7 +372,7 @@ body {
 .status-pills {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .pill-item {
