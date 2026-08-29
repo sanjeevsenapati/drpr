@@ -351,22 +351,48 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* ============================================================ */}
-          {/* LAYER 3: TOP CLIENT & DNS ROUTER CARDS (WITH 3D CUSTOM ASSET) */}
+          {/* LAYER 3: TOP CLIENT & DNS ROUTER CARDS (APP vs WEB) */}
           {/* ============================================================ */}
 
-          {/* Mobile Client & Endpoints Card */}
-          <g transform="translate(480, 15)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Client Endpoints', domain: 'erupeeapp.sbi.bank.in', type: 'Public App Gateways' })}>
-            <rect width="440" height="54" rx="12" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.5" />
-            <g transform="translate(10, 4)">
-              <image href="/assets/mobile_banking_app_icon.jpg" width="45" height="45" clipPath="url(#clip-circle-lg)" />
+          {/* 1. e-Rupee Mobile App Card */}
+          <g transform="translate(370, 12)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Mobile App', domain: 'erupeeapp.sbi.bank.in', type: 'Public Mobile App Gateway (iOS / Android)' })}>
+            <rect width="320" height="52" rx="10" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.5" />
+            <g transform="translate(8, 5)">
+              <image href="/assets/mobile_banking_app_icon.jpg" width="42" height="42" clipPath="url(#clip-circle-lg)" />
             </g>
-            <text x="68" y="24" fill="var(--svg-card-title)" fontSize="13" fontWeight="700" fontFamily="Outfit">
-              e-Rupee Mobile & Merchant Portals
+            <text x="60" y="23" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">
+              📱 e-Rupee Mobile App
             </text>
-            <text x="68" y="41" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">
-              erupeeapp.sbi.bank.in | merchanterupee.sbi.bank.in
+            <text x="60" y="39" fill="var(--svg-card-sub)" fontSize="9.5" fontFamily="JetBrains Mono">
+              erupeeapp.sbi.bank.in
+            </text>
+            <rect x="232" y="16" width="76" height="20" rx="4" fill="var(--accent-pr)" opacity="0.15" />
+            <text x="270" y="30" textAnchor="middle" fill="var(--accent-pr)" fontSize="8.5" fontWeight="700" fontFamily="Inter">
+              MOBILE APP
             </text>
           </g>
+
+          {/* 2. e-Rupee Merchant Web Portal Card */}
+          <g transform="translate(710, 12)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Merchant Web Portal', domain: 'merchanterupee.sbi.bank.in', type: 'Public Merchant Web Gateway' })}>
+            <rect width="320" height="52" rx="10" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.5" />
+            <g transform="translate(8, 5)">
+              <image href="/assets/mobile_banking_app_icon.jpg" width="42" height="42" clipPath="url(#clip-circle-lg)" />
+            </g>
+            <text x="60" y="23" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">
+              🌐 e-Rupee Merchant Web
+            </text>
+            <text x="60" y="39" fill="var(--svg-card-sub)" fontSize="9.5" fontFamily="JetBrains Mono">
+              merchanterupee.sbi.bank.in
+            </text>
+            <rect x="232" y="16" width="76" height="20" rx="4" fill="var(--accent-dr)" opacity="0.15" />
+            <text x="270" y="30" textAnchor="middle" fill="var(--accent-dr)" fontSize="8.5" fontWeight="700" fontFamily="Inter">
+              WEB PORTAL
+            </text>
+          </g>
+
+          {/* Connector Paths from App & Web Cards into DNS Router Box */}
+          <path d="M 530 64 L 530 78 Q 530 80 545 80 L 560 80" fill="none" stroke="var(--border-card)" strokeWidth="1.5" strokeDasharray="4 3" />
+          <path d="M 870 64 L 870 78 Q 870 80 855 80 L 840 80" fill="none" stroke="var(--border-card)" strokeWidth="1.5" strokeDasharray="4 3" />
 
           {/* DNS Router Box */}
           <g transform="translate(560, 78)">
