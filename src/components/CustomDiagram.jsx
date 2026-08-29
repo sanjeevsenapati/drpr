@@ -339,35 +339,35 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* ============================================================ */}
 
           {/* PR Site Outer Container (Rawale DC) */}
-          <g transform="translate(60, 175)">
+          <g transform="translate(55, 175)">
             <rect 
-              width="380" 
-              height="540" 
+              width="390" 
+              height="565" 
               rx="16" 
               fill="var(--svg-region-pr-bg)" 
               stroke="var(--accent-pr)" 
               strokeWidth="1.5" 
               strokeDasharray="8 4"
             />
-            <rect x="80" y="528" width="220" height="26" rx="6" fill="var(--accent-pr)" stroke="var(--accent-pr)" />
-            <text x="190" y="545" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
+            <rect x="85" y="552" width="220" height="26" rx="6" fill="var(--accent-pr)" stroke="var(--accent-pr)" />
+            <text x="195" y="569" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
               PRIMARY REGION (RAWALE DC)
             </text>
           </g>
 
           {/* DR Site Outer Container (Gachibowli DC) */}
-          <g transform="translate(960, 175)">
+          <g transform="translate(955, 175)">
             <rect 
-              width="380" 
-              height="540" 
+              width="390" 
+              height="565" 
               rx="16" 
               fill="var(--svg-region-dr-bg)" 
               stroke="var(--accent-dr)" 
               strokeWidth="1.5" 
               strokeDasharray="8 4"
             />
-            <rect x="70" y="528" width="240" height="26" rx="6" fill="var(--accent-dr)" stroke="var(--accent-dr)" />
-            <text x="190" y="545" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
+            <rect x="75" y="552" width="240" height="26" rx="6" fill="var(--accent-dr)" stroke="var(--accent-dr)" />
+            <text x="195" y="569" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
               DISASTER RECOVERY (GACHIBOWLI DC)
             </text>
           </g>
