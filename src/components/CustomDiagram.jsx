@@ -290,7 +290,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             /* PR Active: Replication flows Left -> Right */
             <>
               <path 
-                d="M 415 640 L 985 640" 
+                d="M 415 670 L 985 670" 
                 fill="none" 
                 stroke="var(--accent-amber)"
                 strokeWidth="2.5"
@@ -302,10 +302,10 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               />
               <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-amber))' }}>
                 <circle r="3" fill="var(--accent-amber)">
-                  <animateMotion path="M 415 640 L 985 640" dur="4.5s" repeatCount="indefinite" calcMode="linear" />
+                  <animateMotion path="M 415 670 L 985 670" dur="4.5s" repeatCount="indefinite" calcMode="linear" />
                 </circle>
                 <circle r="3" fill="var(--accent-amber)">
-                  <animateMotion path="M 415 640 L 985 640" dur="4.5s" begin="2.25s" repeatCount="indefinite" calcMode="linear" />
+                  <animateMotion path="M 415 670 L 985 670" dur="4.5s" begin="2.25s" repeatCount="indefinite" calcMode="linear" />
                 </circle>
               </g>
             </>
@@ -313,7 +313,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             /* DR Active: Replication REVERSES Right -> Left */
             <>
               <path 
-                d="M 985 640 L 415 640" 
+                d="M 985 670 L 415 670" 
                 fill="none" 
                 stroke="var(--accent-amber)"
                 strokeWidth="2.5"
@@ -325,10 +325,10 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               />
               <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-amber))' }}>
                 <circle r="3" fill="var(--accent-amber)">
-                  <animateMotion path="M 985 640 L 415 640" dur="4.5s" repeatCount="indefinite" calcMode="linear" />
+                  <animateMotion path="M 985 670 L 415 670" dur="4.5s" repeatCount="indefinite" calcMode="linear" />
                 </circle>
                 <circle r="3" fill="var(--accent-amber)">
-                  <animateMotion path="M 985 640 L 415 640" dur="4.5s" begin="2.25s" repeatCount="indefinite" calcMode="linear" />
+                  <animateMotion path="M 985 670 L 415 670" dur="4.5s" begin="2.25s" repeatCount="indefinite" calcMode="linear" />
                 </circle>
               </g>
             </>
@@ -728,7 +728,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* Oracle Data Guard Dynamic Direction Card (Center Bottom) */}
-          <g transform="translate(560, 620)">
+          <g transform="translate(560, 650)">
             <rect width="280" height="40" rx="8" fill="var(--svg-card-bg)" stroke="var(--accent-amber)" strokeWidth="1.5" />
             <text x="140" y="18" textAnchor="middle" fill="var(--accent-amber)" fontSize="11" fontWeight="700" fontFamily="Outfit">
               ⚡ ORACLE DATA GUARD: {isPRActive ? 'PR ➔ DR SYNC' : 'DR ➔ PR SYNC'}
