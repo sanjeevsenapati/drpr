@@ -501,39 +501,39 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             {/* Row 1 Applications */}
             <g transform="translate(12, 30)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="14" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">rtsp-app</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">📱 rtsp-app</text>
             </g>
 
             <g transform="translate(105, 30)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="14" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">rtsp-pso</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">⚙️ rtsp-pso</text>
             </g>
 
             <g transform="translate(198, 30)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="26" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">mint</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🪙 mint</text>
             </g>
 
             {/* Row 2 Applications */}
             <g transform="translate(12, 60)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="28" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">BIG</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🏦 BIG</text>
             </g>
 
             <g transform="translate(105, 60)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="12" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">AppBackend</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">💻 AppBackend</text>
             </g>
 
             <g transform="translate(198, 60)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="10" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">Admin Portal</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">📊 Admin Portal</text>
             </g>
 
             {/* Row 3 Application */}
             <g transform="translate(85, 90)">
               <rect width="130" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="20" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">Merchant Portal</text>
+              <text x="65" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🛍️ Merchant Portal</text>
             </g>
           </g>
 
@@ -639,39 +639,39 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             {/* Row 1 Applications */}
             <g transform="translate(12, 30)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="14" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">rtsp-app</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">📱 rtsp-app</text>
             </g>
 
             <g transform="translate(105, 30)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="14" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">rtsp-pso</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">⚙️ rtsp-pso</text>
             </g>
 
             <g transform="translate(198, 30)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="26" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">mint</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🪙 mint</text>
             </g>
 
             {/* Row 2 Applications */}
             <g transform="translate(12, 60)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="28" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">BIG</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🏦 BIG</text>
             </g>
 
             <g transform="translate(105, 60)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="12" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">AppBackend</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">💻 AppBackend</text>
             </g>
 
             <g transform="translate(198, 60)">
               <rect width="86" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="10" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">Admin Portal</text>
+              <text x="43" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">📊 Admin Portal</text>
             </g>
 
             {/* Row 3 Application */}
             <g transform="translate(85, 90)">
               <rect width="130" height="24" rx="5" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="20" y="16" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">Merchant Portal</text>
+              <text x="65" y="16" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600">🛍️ Merchant Portal</text>
             </g>
           </g>
 
