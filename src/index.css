@@ -352,7 +352,7 @@ body {
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   border: 1px solid var(--border-card);
   background: rgba(255, 255, 255, 0.08);
   color: var(--text-main);
@@ -378,11 +378,11 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 10px;
+  padding: 6px 12px;
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid var(--border-card);
-  border-radius: 20px;
-  font-size: 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
 }
 
 .pill-label {
