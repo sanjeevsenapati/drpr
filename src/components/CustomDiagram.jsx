@@ -64,44 +64,68 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* LAYER 1: ROUNDED CONNECTOR LINES WITH SLOW SMOOTH MOTION */}
           {/* ============================================================ */}
 
-          {/* 1. Client DNS Router -> PR WAF Line (Rounded Corners) */}
+          {/* 1A. Mobile App -> DNS Target -> PR WAF Line */}
           <path 
-            d={prPathD}
+            d={appToPrPathD}
             fill="none" 
             className={isPRActive ? "path-active-pr" : "path-static"}
             markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
           />
+          {/* 1B. Merchant Web -> DNS Target -> PR WAF Line */}
+          <path 
+            d={webToPrPathD}
+            fill="none" 
+            className={isPRActive ? "path-active-pr" : "path-static"}
+            markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
+          />
+
+          {/* Animated Particles along PR Active Traffic Paths */}
           {isPRActive && (
             <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-pr))' }}>
               <circle r="3" fill="var(--accent-pr)">
-                <animateMotion path={prPathD} dur="3.6s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path={appToPrPathD} dur="3.6s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="3" fill="var(--accent-pr)">
-                <animateMotion path={prPathD} dur="3.6s" begin="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path={appToPrPathD} dur="3.6s" begin="1.8s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="3" fill="var(--accent-pr)">
-                <animateMotion path={prPathD} dur="3.6s" begin="2.4s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path={webToPrPathD} dur="3.6s" repeatCount="indefinite" calcMode="linear" />
+              </circle>
+              <circle r="3" fill="var(--accent-pr)">
+                <animateMotion path={webToPrPathD} dur="3.6s" begin="1.8s" repeatCount="indefinite" calcMode="linear" />
               </circle>
             </g>
           )}
 
-          {/* 2. Client DNS Router -> DR WAF Line (Rounded Corners) */}
+          {/* 2A. Mobile App -> DNS Target -> DR WAF Line */}
           <path 
-            d={drPathD}
+            d={appToDrPathD}
             fill="none" 
             className={isDRActive ? "path-active-dr" : "path-static"}
             markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
           />
+          {/* 2B. Merchant Web -> DNS Target -> DR WAF Line */}
+          <path 
+            d={webToDrPathD}
+            fill="none" 
+            className={isDRActive ? "path-active-dr" : "path-static"}
+            markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
+          />
+
+          {/* Animated Particles along DR Active Traffic Paths */}
           {isDRActive && (
             <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-dr))' }}>
               <circle r="3" fill="var(--accent-dr)">
-                <animateMotion path={drPathD} dur="3.6s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path={appToDrPathD} dur="3.6s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="3" fill="var(--accent-dr)">
-                <animateMotion path={drPathD} dur="3.6s" begin="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path={appToDrPathD} dur="3.6s" begin="1.8s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="3" fill="var(--accent-dr)">
-                <animateMotion path={drPathD} dur="3.6s" begin="2.4s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path={webToDrPathD} dur="3.6s" repeatCount="indefinite" calcMode="linear" />
+              </circle>
+              <circle r="3" fill="var(--accent-dr)">
+                <animateMotion path={webToDrPathD} dur="3.6s" begin="1.8s" repeatCount="indefinite" calcMode="linear" />
               </circle>
             </g>
           )}
