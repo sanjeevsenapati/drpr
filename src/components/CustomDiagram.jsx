@@ -260,8 +260,8 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* CONNECTING PRIMARY REGION & DR REGION VIA ORTHOGONAL BUS TO COMMON SERVICES */}
           {/* ============================================================ */}
           {commonServicesList.map((svc, idx) => {
-            const itemStep = 23;
-            const targetY = 190 + idx * itemStep + 11.5;
+            const itemStep = 38;
+            const targetY = 190 + idx * itemStep + 15;
             const isVmn = svc.id?.toUpperCase() === 'VMN';
 
             // VMN Inbound Flow: VMN (540/860, targetY) -> Site (450/950, 530)
@@ -400,15 +400,15 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           <g transform="translate(515, 175)">
             <rect 
               width="370" 
-              height="460" 
+              height="435" 
               rx="16" 
               fill="var(--svg-region-cs-bg)" 
               stroke="var(--accent-amber)" 
               strokeWidth="1.5" 
               strokeDasharray="8 4"
             />
-            <rect x="70" y="428" width="230" height="24" rx="6" fill="var(--accent-amber)" stroke="var(--accent-amber)" />
-            <text x="185" y="444" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
+            <rect x="70" y="398" width="230" height="24" rx="6" fill="var(--accent-amber)" stroke="var(--accent-amber)" />
+            <text x="185" y="414" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
               COMMON SERVICES (SHARED VMN)
             </text>
           </g>
@@ -809,7 +809,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* ============================================================ */}
 
           {commonServicesList.map((svc, idx) => {
-            const itemStep = 23;
+            const itemStep = 38;
             const yPos = 190 + idx * itemStep;
             const activeColor = isPRActive ? "var(--accent-pr)" : "var(--accent-dr)";
             return (
@@ -821,29 +821,29 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               >
                 <rect 
                   width="320" 
-                  height="21" 
-                  rx="6" 
+                  height="30" 
+                  rx="8" 
                   fill="var(--svg-card-bg)" 
                   stroke={isPRActive ? "var(--accent-pr)" : isDRActive ? "var(--accent-dr)" : "var(--svg-card-stroke)"} 
                   strokeWidth="1.2" 
                 />
-                <circle cx="16" cy="10.5" r="7" fill="var(--accent-amber)" />
-                <text x="16" y="13.5" textAnchor="middle" fill="#ffffff" fontSize="8" fontWeight="bold">{svc.number}</text>
-                <text x="28" y="14" fill="var(--svg-card-title)" fontSize="9.5" fontWeight="700" fontFamily="Outfit">{svc.name}</text>
-                <text x="135" y="14" fill="var(--svg-card-sub)" fontSize="8.5" fontFamily="JetBrains Mono">{svc.endpoint}</text>
+                <circle cx="18" cy="15" r="8" fill="var(--accent-amber)" />
+                <text x="18" y="18.5" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="bold">{svc.number}</text>
+                <text x="32" y="19" fill="var(--svg-card-title)" fontSize="10.5" fontWeight="700" fontFamily="Outfit">{svc.name}</text>
+                <text x="140" y="19" fill="var(--svg-card-sub)" fontSize="9" fontFamily="JetBrains Mono">{svc.endpoint}</text>
 
                 {/* Connection Status Badge */}
                 {svc.id?.toUpperCase() === 'VMN' ? (
                   <>
-                    <rect x="238" y="3" width="74" height="15" rx="3" fill="var(--accent-amber)" opacity="0.2" stroke="var(--accent-amber)" strokeWidth="1" />
-                    <text x="275" y="13.5" textAnchor="middle" fill="var(--accent-amber)" fontSize="7.5" fontWeight="700" fontFamily="Inter">
+                    <rect x="236" y="6" width="76" height="18" rx="4" fill="var(--accent-amber)" opacity="0.2" stroke="var(--accent-amber)" strokeWidth="1" />
+                    <text x="274" y="18" textAnchor="middle" fill="var(--accent-amber)" fontSize="8" fontWeight="700" fontFamily="Inter">
                       📥 INBOUND ➔ SITE
                     </text>
                   </>
                 ) : (
                   <>
-                    <rect x="252" y="3" width="60" height="15" rx="3" fill={activeColor} opacity="0.15" />
-                    <text x="282" y="13.5" textAnchor="middle" fill={activeColor} fontSize="7.5" fontWeight="700" fontFamily="Inter">
+                    <rect x="250" y="6" width="62" height="18" rx="4" fill={activeColor} opacity="0.15" />
+                    <text x="281" y="18" textAnchor="middle" fill={activeColor} fontSize="8" fontWeight="700" fontFamily="Inter">
                       {isPRActive ? '⚡ PR LINK' : '⚡ DR LINK'}
                     </text>
                   </>
