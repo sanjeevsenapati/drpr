@@ -162,8 +162,18 @@ export default function App() {
           </div>
         )}
 
-        {/* Clean Theme Toggle */}
+        {/* Clean Theme & Legend Toggles */}
         <div className="status-pills">
+          <button 
+            className="theme-toggle-btn"
+            onClick={() => setShowLegend(prev => !prev)}
+            title="Toggle Architecture Legend"
+            style={{ background: showLegend ? 'rgba(245, 158, 11, 0.2)' : 'transparent', borderColor: showLegend ? 'var(--accent-amber)' : 'var(--border-card)' }}
+          >
+            <Info size={14} color={showLegend ? 'var(--accent-amber)' : 'currentColor'} />
+            <span>{showLegend ? 'Hide Legend' : 'Show Legend'}</span>
+          </button>
+
           <button 
             className="theme-toggle-btn"
             onClick={() => setTheme(prev => (prev === 'light' ? 'dark' : 'light'))}

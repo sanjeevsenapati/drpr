@@ -378,18 +378,8 @@ export default function MnaDiagram({ onSelectComponent }) {
           </g>
 
 
-          {/* BOTTOM ACRONYMS LEGEND BAR */}
-          <g transform="translate(20, 680)">
-            <rect width="1400" height="55" rx="10" fill="var(--svg-pill-bg)" stroke="var(--border-card)" strokeWidth="1" />
-            <text x="15" y="20" fill="var(--accent-amber)" fontSize="10" fontWeight="700" fontFamily="Inter">
-              ARCHITECTURE ACRONYMS: PLB (PSO Load Balancer) | AP (Admin Portal) | ILB (Internal Load Balancer) | MP (Merchant Portal) | MAB (Merchant App Backend) | BEC (Bank External Connector) | DMS (Digital Minting Services) | BIG (Bank Interface Gateway) | WAF (Web App Firewall) | PSO (Payment System Operator) | DTSP (Digital Token Service Provider) | MHA (Merchant Host Adapter)
-            </text>
-            <text x="15" y="40" fill="var(--text-muted)" fontSize="9.5" fontFamily="JetBrains Mono">
-              ENVIRONMENT SPECS: PR (19 Nodes: 12 APP, 4 WEB, 3 DB) | DR (19 Nodes: 12 APP, 4 WEB, 3 DB) | TECH STACK: RHEL 8, Java 1.8/1.21, TypeScript, JPOS, Spring Boot, Nginx, Tomcat, Redis, Oracle DB RAC
-            </text>
-          </g>
-        </svg>
+          </svg>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
