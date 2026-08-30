@@ -9,12 +9,22 @@ import {
   Activity,
   Shield,
   Zap,
-  Globe
+  Globe,
+  ZoomIn,
+  ZoomOut,
+  RotateCcw,
+  Maximize2
 } from 'lucide-react';
+import mnaSvgRaw from '../../MNA.svg?raw';
 
 export default function MnaDiagram({ onSelectComponent }) {
-  const [activeTab, setActiveTab] = useState('CANVAS'); // 'CANVAS' | 'MATRIX' | 'SPECS'
+  const [activeTab, setActiveTab] = useState('CANVAS'); // 'CANVAS' | 'ORIGINAL_VECTOR' | 'MATRIX' | 'SPECS'
+  const [zoomLevel, setZoomLevel] = useState(100);
   const [hoveredNode, setHoveredNode] = useState(null);
+
+  const handleZoomIn = () => setZoomLevel(prev => Math.min(prev + 20, 200));
+  const handleZoomOut = () => setZoomLevel(prev => Math.max(prev - 20, 50));
+  const handleResetZoom = () => setZoomLevel(100);
 
   // Single-Node vs Multi-Node Matrix extracted directly from MNA.svg
   const comparisonData = [
@@ -111,6 +121,26 @@ export default function MnaDiagram({ onSelectComponent }) {
           </button>
 
           <button
+            onClick={() => setActiveTab('ORIGINAL_VECTOR')}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '6px 14px',
+              borderRadius: '6px',
+              border: 'none',
+              fontSize: '0.78rem',
+              fontWeight: 700,
+              cursor: 'pointer',
+              background: activeTab === 'ORIGINAL_VECTOR' ? 'var(--accent-rose)' : 'transparent',
+              color: activeTab === 'ORIGINAL_VECTOR' ? '#ffffff' : 'var(--text-muted)',
+              transition: 'all 0.2s ease'
+            }}
+          >
+            <Maximize2 size={13} /> Raw Vector MNA.svg (Bundled)
+          </button>
+
+          <button
             onClick={() => setActiveTab('MATRIX')}
             style={{
               display: 'flex',
@@ -150,6 +180,26 @@ export default function MnaDiagram({ onSelectComponent }) {
             <Server size={13} /> Environment & Node Specs
           </button>
         </div>
+
+        {/* Zoom Controls (Active during ORIGINAL_VECTOR view) */}
+        {activeTab === 'ORIGINAL_VECTOR' ? (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'var(--svg-pill-bg)', padding: '4px 8px', borderRadius: '8px', border: '1px solid var(--border-card)' }}>
+            <button onClick={handleZoomOut} style={{ background: 'transparent', border: 'none', color: 'var(--text-main)', cursor: 'pointer', display: 'flex', alignItems: 'center' }} title="Zoom Out">
+              <ZoomOut size={15} />
+            </button>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, fontFamily: 'JetBrains Mono', minWidth: '42px', textAlign: 'center' }}>
+              {zoomLevel}%
+            </span>
+            <button onClick={handleZoomIn} style={{ background: 'transparent', border: 'none', color: 'var(--text-main)', cursor: 'pointer', display: 'flex', alignItems: 'center' }} title="Zoom In">
+              <ZoomIn size={15} />
+            </button>
+            <button onClick={handleResetZoom} style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', display: 'flex', alignItems: 'center', marginLeft: '4px' }} title="Reset Zoom">
+              <RotateCcw size={14} />
+            </button>
+          </div>
+        ) : (
+          <div style={{ width: '120px' }}></div>
+        )}
       </div>
 
       {/* TAB CONTENT 1: NATIVE INTERACTIVE SVG CANVAS */}
@@ -498,6 +548,25 @@ export default function MnaDiagram({ onSelectComponent }) {
               </text>
             </g>
           </svg>
+        </div>
+      )}
+
+      {/* TAB CONTENT 2: INLINED VECTOR BUNDLED MNA.SVG */}
+      {activeTab === 'ORIGINAL_VECTOR' && (
+        <div style={{ flex: 1, width: '100%', height: '100%', overflow: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', padding: '16px' }}>
+          <div 
+            style={{
+              transform: `scale(${zoomLevel / 100})`,
+              transformOrigin: 'top center',
+              transition: 'transform 0.2s ease-out',
+              background: '#ffffff',
+              borderRadius: '12px',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+              padding: '16px',
+              maxWidth: '100%'
+            }}
+            dangerouslySetInnerHTML={{ __html: mnaSvgRaw }}
+          />
         </div>
       )}
 
