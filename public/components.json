@@ -9,6 +9,7 @@
       "wafIp": "10.x.x.252",
       "plbEndpoint": "cbdc-plb.bank.sbi",
       "ilbEndpoint": "cbdc-ilb.bank.sbi",
+      "psoEndpoint": "pso-pr.bank.sbi",
       "status": "HEALTHY",
       "dbRole": "READ WRITE (Primary)"
     },
@@ -20,6 +21,7 @@
       "wafIp": "10.x.x.230",
       "plbEndpoint": "cbdc-plb.bank.sbi",
       "ilbEndpoint": "cbdc-ilb.bank.sbi",
+      "psoEndpoint": "pso-dr.bank.sbi",
       "status": "HEALTHY",
       "dbRole": "READ ONLY (Data Guard Standby)"
     }

@@ -261,8 +261,8 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* ============================================================ */}
           {commonServicesList.map((svc, idx) => {
             const targetY = 192 + idx * 44 + 17.5;
-            const prSvcPathD = `M 400 530 L 465 530 L 465 ${targetY} L 540 ${targetY}`;
-            const drSvcPathD = `M 1000 530 L 935 530 L 935 ${targetY} L 860 ${targetY}`;
+            const prSvcPathD = `M 430 530 L 465 530 L 465 ${targetY} L 540 ${targetY}`;
+            const drSvcPathD = `M 970 530 L 935 530 L 935 ${targetY} L 860 ${targetY}`;
 
             return (
               <g key={`conn-${svc.id}`}>
@@ -512,49 +512,70 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* PR RTSP CORE SERVICES APPLICATION VM CLUSTER */}
-          <g transform="translate(100, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'RTSP Core Services Cluster (PR)', type: 'Microservice Cluster (6 Applications)', status: 'RUNNING' })}>
-            <rect width="300" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
-            <text x="15" y="22" fill="var(--accent-pr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (PR)</text>
+          <g transform="translate(70, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'RTSP Core Services Cluster (PR)', type: 'Microservice Cluster (6 Applications)', status: 'RUNNING' })}>
+            <rect width="240" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
+            <text x="12" y="22" fill="var(--accent-pr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (PR)</text>
             
-            <g transform="translate(258, 8)">
+            <g transform="translate(198, 8)">
               <rect width="30" height="30" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
               <g transform="translate(-1, -1)" color="var(--accent-pr)">
                 <use href="#icon-server" />
               </g>
             </g>
 
-            {/* Row 1 Applications (Symmetrical 3-Column Grid) */}
-            <g transform="translate(12, 34)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📱 rtsp-app</text>
+            {/* Row 1 Applications */}
+            <g transform="translate(10, 34)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">📱 rtsp-app</text>
             </g>
 
-            <g transform="translate(107, 34)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">⚙️ rtsp-pso</text>
+            <g transform="translate(85, 34)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🪙 mint</text>
             </g>
 
-            <g transform="translate(202, 34)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🪙 mint</text>
+            <g transform="translate(160, 34)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🏦 BIG</text>
             </g>
 
-            {/* Row 2 Applications (Symmetrical 3-Column Grid) */}
-            <g transform="translate(12, 68)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🏦 BIG</text>
+            {/* Row 2 Applications */}
+            <g transform="translate(10, 68)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">💻 AppBackend</text>
             </g>
 
-            <g transform="translate(107, 68)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📊 Admin Portal</text>
+            <g transform="translate(85, 68)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">📊 Admin</text>
             </g>
 
-            <g transform="translate(202, 68)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🛍️ Merchant</text>
+            <g transform="translate(160, 68)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🛍️ Merchant</text>
             </g>
           </g>
+
+          {/* INDEPENDENT PSO SERVICE (PR RAWALE DC) */}
+          <g transform="translate(320, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'pso-pr', name: 'PSO Service (PR Rawale)', domain: prConfig?.psoEndpoint || 'pso-pr.bank.sbi', type: 'Independent Payment System Operator Service', status: 'ACTIVE' })}>
+            <rect width="110" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
+            <rect x="8" y="8" width="32" height="32" rx="8" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
+            <text x="24" y="29" textAnchor="middle" fontSize="15">⚙️</text>
+            <text x="12" y="55" fill="var(--svg-card-title)" fontSize="11" fontWeight="700" fontFamily="Outfit">PSO (PR)</text>
+            <text x="12" y="70" fill="var(--accent-pr)" fontSize="8.5" fontFamily="JetBrains Mono">{prConfig?.psoEndpoint || 'pso-pr.bank.sbi'}</text>
+            <rect x="12" y="82" width="86" height="18" rx="4" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
+            <text x="55" y="94.5" textAnchor="middle" fill="var(--accent-pr)" fontSize="8" fontWeight="700" fontFamily="Inter">SITE PSO SERVICE</text>
+          </g>
+
+          {/* PR Core Services -> PSO (PR) Flow Line */}
+          <path d="M 310 530 L 320 530" fill="none" className={isPRActive ? "path-active-pr" : "path-static"} markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"} />
+          {isPRActive && (
+            <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-pr))' }}>
+              <circle r="2" fill="var(--accent-pr)">
+                <animateMotion path="M 310 530 L 320 530" dur="0.8s" repeatCount="indefinite" calcMode="linear" />
+              </circle>
+            </g>
+          )}
 
           {/* GROUPED PR DATABASE CLUSTER CONTAINER */}
           <g transform="translate(85, 605)">
@@ -653,49 +674,70 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* DR RTSP CORE SERVICES APPLICATION VM CLUSTER */}
-          <g transform="translate(1000, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'RTSP Core Services Cluster (DR Gachibowli)', type: 'Microservice Cluster (6 Applications)', status: isDRActive ? 'RUNNING' : 'STANDBY' })}>
-            <rect width="300" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
-            <text x="15" y="22" fill="var(--accent-dr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (DR)</text>
+          <g transform="translate(970, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'RTSP Core Services Cluster (DR Gachibowli)', type: 'Microservice Cluster (6 Applications)', status: isDRActive ? 'RUNNING' : 'STANDBY' })}>
+            <rect width="240" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
+            <text x="12" y="22" fill="var(--accent-dr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (DR)</text>
             
-            <g transform="translate(258, 8)">
+            <g transform="translate(198, 8)">
               <rect width="30" height="30" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
               <g transform="translate(-1, -1)" color="var(--accent-dr)">
                 <use href="#icon-server" />
               </g>
             </g>
 
-            {/* Row 1 Applications (Symmetrical 3-Column Grid) */}
-            <g transform="translate(12, 34)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📱 rtsp-app</text>
+            {/* Row 1 Applications */}
+            <g transform="translate(10, 34)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">📱 rtsp-app</text>
             </g>
 
-            <g transform="translate(107, 34)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">⚙️ rtsp-pso</text>
+            <g transform="translate(85, 34)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🪙 mint</text>
             </g>
 
-            <g transform="translate(202, 34)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🪙 mint</text>
+            <g transform="translate(160, 34)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🏦 BIG</text>
             </g>
 
-            {/* Row 2 Applications (Symmetrical 3-Column Grid) */}
-            <g transform="translate(12, 68)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🏦 BIG</text>
+            {/* Row 2 Applications */}
+            <g transform="translate(10, 68)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">💻 AppBackend</text>
             </g>
 
-            <g transform="translate(107, 68)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📊 Admin Portal</text>
+            <g transform="translate(85, 68)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">📊 Admin</text>
             </g>
 
-            <g transform="translate(202, 68)">
-              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🛍️ Merchant</text>
+            <g transform="translate(160, 68)">
+              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🛍️ Merchant</text>
             </g>
           </g>
+
+          {/* INDEPENDENT PSO SERVICE (DR GACHIBOWLI DC) */}
+          <g transform="translate(1220, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'pso-dr', name: 'PSO Service (DR Gachibowli)', domain: drConfig?.psoEndpoint || 'pso-dr.bank.sbi', type: 'Independent Payment System Operator Service', status: isDRActive ? 'ACTIVE' : 'STANDBY' })}>
+            <rect width="110" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
+            <rect x="8" y="8" width="32" height="32" rx="8" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
+            <text x="24" y="29" textAnchor="middle" fontSize="15">⚙️</text>
+            <text x="12" y="55" fill="var(--svg-card-title)" fontSize="11" fontWeight="700" fontFamily="Outfit">PSO (DR)</text>
+            <text x="12" y="70" fill="var(--accent-dr)" fontSize="8.5" fontFamily="JetBrains Mono">{drConfig?.psoEndpoint || 'pso-dr.bank.sbi'}</text>
+            <rect x="12" y="82" width="86" height="18" rx="4" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
+            <text x="55" y="94.5" textAnchor="middle" fill="var(--accent-dr)" fontSize="8" fontWeight="700" fontFamily="Inter">SITE PSO SERVICE</text>
+          </g>
+
+          {/* DR Core Services -> PSO (DR) Flow Line */}
+          <path d="M 1210 530 L 1220 530" fill="none" className={isDRActive ? "path-active-dr" : "path-static"} markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"} />
+          {isDRActive && (
+            <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-dr))' }}>
+              <circle r="2" fill="var(--accent-dr)">
+                <animateMotion path="M 1210 530 L 1220 530" dur="0.8s" repeatCount="indefinite" calcMode="linear" />
+              </circle>
+            </g>
+          )}
 
           {/* GROUPED DR DATABASE CLUSTER CONTAINER */}
           <g transform="translate(985, 605)">

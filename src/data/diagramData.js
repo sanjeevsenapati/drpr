@@ -13,6 +13,7 @@ export const SITES_DATA = {
     mintDb: 'cbdc-mint-db.bank.sbi (Primary R/W)',
     plbEndpoint: 'cbdc-plb.bank.sbi',
     ilbEndpoint: 'cbdc-ilb.bank.sbi',
+    psoEndpoint: 'pso-pr.bank.sbi',
     apps: ['RTSP Core Service', 'CBDC Minting Service', 'Wallet Service'],
     endpoints: [
       { name: 'e-Rupee Mobile App', url: 'erupeeapp.sbi.bank.in' },
@@ -32,6 +33,7 @@ export const SITES_DATA = {
     mintDb: 'cbdc-mint-db.bank.sbi (Data Guard Standby)',
     plbEndpoint: 'cbdc-plb.bank.sbi (Standby)',
     ilbEndpoint: 'cbdc-ilb.bank.sbi (Standby)',
+    psoEndpoint: 'pso-dr.bank.sbi (Standby)',
     apps: ['RTSP Core Service (Standby)', 'CBDC Minting Service (Standby)', 'Wallet Service (Standby)'],
     endpoints: [
       { name: 'e-Rupee Mobile App', url: 'erupeeapp.sbi.bank.in' },
