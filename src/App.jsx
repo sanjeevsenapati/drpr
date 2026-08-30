@@ -6,15 +6,19 @@ import {
   Info,
   FileJson,
   Sun,
-  Moon
+  Moon,
+  Layers,
+  Network
 } from 'lucide-react';
 import CustomDiagram from './components/CustomDiagram';
+import MnaDiagram from './components/MnaDiagram';
 import ComponentInspector from './components/ComponentInspector';
 import SimulationStepper from './components/SimulationStepper';
 import { SITES_DATA as INITIAL_SITES_DATA, LEGEND_ITEMS } from './data/diagramData';
 
 export default function App() {
   const [mode, setMode] = useState('PR'); // 'PR' | 'DR'
+  const [diagramType, setDiagramType] = useState('FAILOVER'); // 'FAILOVER' | 'MNA'
   const [theme, setTheme] = useState('light'); // 'light' (Clean Light Mode) | 'dark'
   const [isConsoleOpen, setIsConsoleOpen] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
@@ -103,37 +107,60 @@ export default function App() {
             <ShieldCheck size={20} />
           </div>
           <div className="brand-title">
-            <h1>SBI e-Rupee PR/DR Architecture</h1>
+            <h1>SBI e-Rupee Architecture Dashboard</h1>
           </div>
         </div>
 
-        {/* Clean Segmented Mode Switcher with Togglable Engineer Console */}
-        <div className="mode-switcher">
-          <button 
-            className={`mode-btn ${mode === 'PR' && !isConsoleOpen ? 'active-pr' : ''}`}
-            onClick={() => handleSelectSite('PR')}
+        {/* Primary Diagram Type Switcher (Failover PR/DR vs MNA Architecture) */}
+        <div style={{ display: 'flex', background: 'var(--svg-pill-bg)', padding: '3px', borderRadius: '8px', border: '1px solid var(--border-card)', gap: '4px' }}>
+          <button
+            className={`mode-btn ${diagramType === 'FAILOVER' ? 'active-pr' : ''}`}
+            onClick={() => setDiagramType('FAILOVER')}
+            style={{ padding: '6px 12px', fontSize: '0.78rem', fontWeight: 700 }}
           >
-            <Server size={14} />
-            <span>PR Active (Rawale)</span>
+            <Network size={14} />
+            <span>PR ➔ DR Failover</span>
           </button>
 
-          <button 
-            className={`mode-btn ${mode === 'DR' && !isConsoleOpen ? 'active-dr' : ''}`}
-            onClick={() => handleSelectSite('DR')}
+          <button
+            className={`mode-btn ${diagramType === 'MNA' ? 'active-sim' : ''}`}
+            onClick={() => setDiagramType('MNA')}
+            style={{ padding: '6px 12px', fontSize: '0.78rem', fontWeight: 700 }}
           >
-            <Server size={14} />
-            <span>DR Active (Gachibowli)</span>
-          </button>
-
-          {/* Togglable Engineer Failover Console Button */}
-          <button 
-            className={`mode-btn ${isConsoleOpen ? 'active-sim' : ''}`}
-            onClick={handleToggleConsole}
-          >
-            <PlayCircle size={14} />
-            <span>{isConsoleOpen ? 'Close Failover Console' : 'Engineer Failover Console'}</span>
+            <Layers size={14} />
+            <span>MNA Architecture (MNA.svg)</span>
           </button>
         </div>
+
+        {/* Failover Site Mode Switcher (Shown when in FAILOVER diagram type) */}
+        {diagramType === 'FAILOVER' && (
+          <div className="mode-switcher">
+            <button 
+              className={`mode-btn ${mode === 'PR' && !isConsoleOpen ? 'active-pr' : ''}`}
+              onClick={() => handleSelectSite('PR')}
+            >
+              <Server size={14} />
+              <span>PR Active (Rawale)</span>
+            </button>
+
+            <button 
+              className={`mode-btn ${mode === 'DR' && !isConsoleOpen ? 'active-dr' : ''}`}
+              onClick={() => handleSelectSite('DR')}
+            >
+              <Server size={14} />
+              <span>DR Active (Gachibowli)</span>
+            </button>
+
+            {/* Togglable Engineer Failover Console Button */}
+            <button 
+              className={`mode-btn ${isConsoleOpen ? 'active-sim' : ''}`}
+              onClick={handleToggleConsole}
+            >
+              <PlayCircle size={14} />
+              <span>{isConsoleOpen ? 'Close Failover Console' : 'Engineer Failover Console'}</span>
+            </button>
+          </div>
+        )}
 
         {/* Clean Theme Toggle */}
         <div className="status-pills">
@@ -150,13 +177,18 @@ export default function App() {
 
       {/* Main Workspace */}
       <main className="main-workspace">
-        {/* Custom Native React SVG Diagram Component */}
-        <CustomDiagram 
-          mode={diagramMode} 
-          activeStep={activeStep}
-          onSelectComponent={setSelectedComponent}
-          componentsConfig={componentsConfig}
-        />
+        {diagramType === 'FAILOVER' ? (
+          <CustomDiagram 
+            mode={diagramMode} 
+            activeStep={activeStep}
+            onSelectComponent={setSelectedComponent}
+            componentsConfig={componentsConfig}
+          />
+        ) : (
+          <MnaDiagram 
+            onSelectComponent={setSelectedComponent}
+          />
+        )}
 
         {/* Legend Overlay Box */}
         {showLegend && (
