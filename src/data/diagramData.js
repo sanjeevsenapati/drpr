@@ -42,15 +42,16 @@ export const SITES_DATA = {
 };
 
 export const COMMON_SERVICES = [
-  { id: 'kafka', number: '9', name: 'KAFKA', endpoint: 'kafka.bank.sbi', type: 'Messaging & Event Stream', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'abas', number: '10', name: 'ABAS', endpoint: 'abas-attestation.bank.sbi', type: 'Attestation & Security', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'vld', number: '11', name: 'Validation SVC', endpoint: 'validation-svc.bank.sbi', type: 'Txn Validation Service', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'eis', number: '12', name: 'EIS', endpoint: 'eis.sbi.co.in', type: 'Enterprise Integration System', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'upi', number: '13', name: 'UPI', endpoint: 'upi.sbi.co.in', type: 'UPI Gateway Payment System', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'sms', number: '14', name: 'SMS', endpoint: 'bulksms.sbi.co.in', type: 'SMS Gateway Service', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'prm', number: '15', name: 'PRM', endpoint: 'prm.sbi.co.in', type: 'Risk & Fraud Monitoring', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'sfg', number: '16', name: 'SFG', endpoint: 'sfg.sbi.co.in', type: 'Secure File Gateway', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'ldap', number: '17', name: 'LDAP', endpoint: 'ad.sbi', type: 'Active Directory Identity', prStatus: 'Connected', drStatus: 'Connected' }
+  { id: 'kafka', number: '1', name: 'KAFKA', endpoint: 'kafka.bank.sbi', type: 'Messaging & Event Stream', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'abas', number: '2', name: 'ABAS', endpoint: 'abas-attestation.bank.sbi', type: 'Attestation & Security', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'vld', number: '3', name: 'Validation SVC', endpoint: 'validation-svc.bank.sbi', type: 'Txn Validation Service', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'eis', number: '4', name: 'EIS', endpoint: 'eis.sbi.co.in', type: 'Enterprise Integration System', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'upi', number: '5', name: 'UPI', endpoint: 'upi.sbi.co.in', type: 'UPI Gateway Payment System', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'sms', number: '6', name: 'SMS', endpoint: 'bulksms.sbi.co.in', type: 'SMS Gateway Service', prStatus: 'Connected', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'prm', number: '7', name: 'PRM', endpoint: 'prm.sbi.co.in', type: 'Risk & Fraud Monitoring', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'sfg', number: '8', "name": 'SFG', endpoint: 'sfg.sbi.co.in', type: 'Secure File Gateway', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'ldap', number: '9', name: 'LDAP', endpoint: 'ad.sbi', type: 'Active Directory Identity', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'VMN', number: '10', name: 'VMN', endpoint: 'vmn.sbi.co.in', type: 'Virtual Mobile Number Gateway', prStatus: 'Connected', drStatus: 'Connected' }
 ];
 
 export const FAILOVER_STEPS = [

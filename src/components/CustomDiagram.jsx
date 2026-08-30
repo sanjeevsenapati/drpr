@@ -144,28 +144,35 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
 
           {/* 3. PR WAF -> PR PLB Line */}
           <path 
-            d="M 250 245 L 250 275" 
+            d="M 250 245 L 250 265" 
             fill="none" 
             className={isPRActive ? "path-active-pr" : "path-static"}
             markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
           />
-          {/* 4. PR PLB -> PR ILB Line */}
+          {/* 4. PR PLB -> PR AppBackend Line */}
           <path 
-            d="M 250 325 L 250 355" 
+            d="M 250 315 L 250 335" 
             fill="none" 
             className={isPRActive ? "path-active-pr" : "path-static"}
             markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
           />
-          {/* 5. PR ILB -> PR App VMs Cluster Line */}
+          {/* 5. PR AppBackend -> PR ILB Line */}
           <path 
-            d="M 250 405 L 250 435" 
+            d="M 250 385 L 250 405" 
             fill="none" 
             className={isPRActive ? "path-active-pr" : "path-static"}
             markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
           />
-          {/* 6. PR App VMs -> Grouped PR Database Cluster Line */}
+          {/* 6. PR ILB -> PR RTSP Core Services Line */}
           <path 
-            d="M 250 560 L 250 585" 
+            d="M 250 455 L 250 475" 
+            fill="none" 
+            className={isPRActive ? "path-active-pr" : "path-static"}
+            markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
+          />
+          {/* 7. PR RTSP Core Services -> PR DB Cluster Line */}
+          <path 
+            d="M 250 585 L 250 605" 
             fill="none" 
             className={isPRActive ? "path-active-pr" : "path-static"}
             markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
@@ -175,44 +182,54 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {isPRActive && (
             <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-pr))' }}>
               <circle r="2.5" fill="var(--accent-pr)">
-                <animateMotion path="M 250 245 L 250 275" dur="1.6s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 250 245 L 250 265" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-pr)">
-                <animateMotion path="M 250 325 L 250 355" dur="1.6s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 250 315 L 250 335" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-pr)">
-                <animateMotion path="M 250 405 L 250 435" dur="1.6s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 250 385 L 250 405" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-pr)">
-                <animateMotion path="M 250 560 L 250 585" dur="1.6s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 250 455 L 250 475" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+              </circle>
+              <circle r="2.5" fill="var(--accent-pr)">
+                <animateMotion path="M 250 585 L 250 605" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
             </g>
           )}
 
-          {/* 7. DR WAF -> DR PLB Line */}
+          {/* 8. DR WAF -> DR PLB Line */}
           <path 
-            d="M 1150 245 L 1150 275" 
+            d="M 1150 245 L 1150 265" 
             fill="none" 
             className={isDRActive ? "path-active-dr" : "path-static"}
             markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
           />
-          {/* 8. DR PLB -> DR ILB Line */}
+          {/* 9. DR PLB -> DR AppBackend Line */}
           <path 
-            d="M 1150 325 L 1150 355" 
+            d="M 1150 315 L 1150 335" 
             fill="none" 
             className={isDRActive ? "path-active-dr" : "path-static"}
             markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
           />
-          {/* 9. DR ILB -> DR App VMs Cluster Line */}
+          {/* 10. DR AppBackend -> DR ILB Line */}
           <path 
-            d="M 1150 405 L 1150 435" 
+            d="M 1150 385 L 1150 405" 
             fill="none" 
             className={isDRActive ? "path-active-dr" : "path-static"}
             markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
           />
-          {/* 10. DR App VMs -> Grouped DR Database Cluster Line */}
+          {/* 11. DR ILB -> DR RTSP Core Services Line */}
           <path 
-            d="M 1150 560 L 1150 585" 
+            d="M 1150 455 L 1150 475" 
+            fill="none" 
+            className={isDRActive ? "path-active-dr" : "path-static"}
+            markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
+          />
+          {/* 12. DR RTSP Core Services -> DR DB Cluster Line */}
+          <path 
+            d="M 1150 585 L 1150 605" 
             fill="none" 
             className={isDRActive ? "path-active-dr" : "path-static"}
             markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
@@ -222,31 +239,34 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {isDRActive && (
             <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-dr))' }}>
               <circle r="2.5" fill="var(--accent-dr)">
-                <animateMotion path="M 1150 245 L 1150 275" dur="1.6s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 1150 245 L 1150 265" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-dr)">
-                <animateMotion path="M 1150 325 L 1150 355" dur="1.6s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 1150 315 L 1150 335" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-dr)">
-                <animateMotion path="M 1150 405 L 1150 435" dur="1.6s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 1150 385 L 1150 405" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-dr)">
-                <animateMotion path="M 1150 560 L 1150 585" dur="1.6s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 1150 455 L 1150 475" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+              </circle>
+              <circle r="2.5" fill="var(--accent-dr)">
+                <animateMotion path="M 1150 585 L 1150 605" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
             </g>
           )}
 
           {/* ============================================================ */}
-          {/* CONNECTING PRIMARY REGION (RAWALE DC) & DR REGION TO EACH COMMON SERVICE SECTION */}
+          {/* CONNECTING PRIMARY REGION & DR REGION VIA ORTHOGONAL BUS TO COMMON SERVICES */}
           {/* ============================================================ */}
           {commonServicesList.map((svc, idx) => {
             const targetY = 192 + idx * 44 + 17.5;
-            const prSvcPathD = `M 400 497.5 Q 460 497.5 460 ${targetY} L 540 ${targetY}`;
-            const drSvcPathD = `M 1000 497.5 Q 940 497.5 940 ${targetY} L 860 ${targetY}`;
+            const prSvcPathD = `M 400 530 L 465 530 L 465 ${targetY} L 540 ${targetY}`;
+            const drSvcPathD = `M 1000 530 L 935 530 L 935 ${targetY} L 860 ${targetY}`;
 
             return (
               <g key={`conn-${svc.id}`}>
-                {/* PR (Rawale DC) -> Common Service Section Connection Path */}
+                {/* PR -> Common Service Orthogonal Bus Path */}
                 <path 
                   d={prSvcPathD}
                   fill="none" 
@@ -256,15 +276,12 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
                 {isPRActive && (
                   <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-pr))' }}>
                     <circle r="2.5" fill="var(--accent-pr)">
-                      <animateMotion path={prSvcPathD} dur={`${2.0 + (idx % 3) * 0.4}s`} repeatCount="indefinite" calcMode="linear" />
-                    </circle>
-                    <circle r="2.5" fill="var(--accent-pr)">
-                      <animateMotion path={prSvcPathD} dur={`${2.0 + (idx % 3) * 0.4}s`} begin="1.0s" repeatCount="indefinite" calcMode="linear" />
+                      <animateMotion path={prSvcPathD} dur={`${2.2 + (idx % 4) * 0.3}s`} repeatCount="indefinite" calcMode="linear" />
                     </circle>
                   </g>
                 )}
 
-                {/* DR (Gachibowli DC) -> Common Service Section Connection Path */}
+                {/* DR -> Common Service Orthogonal Bus Path */}
                 <path 
                   d={drSvcPathD}
                   fill="none" 
@@ -274,10 +291,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
                 {isDRActive && (
                   <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-dr))' }}>
                     <circle r="2.5" fill="var(--accent-dr)">
-                      <animateMotion path={drSvcPathD} dur={`${2.0 + (idx % 3) * 0.4}s`} repeatCount="indefinite" calcMode="linear" />
-                    </circle>
-                    <circle r="2.5" fill="var(--accent-dr)">
-                      <animateMotion path={drSvcPathD} dur={`${2.0 + (idx % 3) * 0.4}s`} begin="1.0s" repeatCount="indefinite" calcMode="linear" />
+                      <animateMotion path={drSvcPathD} dur={`${2.2 + (idx % 4) * 0.3}s`} repeatCount="indefinite" calcMode="linear" />
                     </circle>
                   </g>
                 )}
