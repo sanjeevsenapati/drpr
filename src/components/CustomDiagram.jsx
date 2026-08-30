@@ -10,11 +10,11 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
   const drConfig = componentsConfig?.siteArchitecture?.DR;
 
   // Rounded Corner Traffic Flow Paths (Mobile App & Merchant Web -> DNS Target -> WAF-PR / WAF-DR)
-  const appToPrPathD = "M 530 58 L 530 75 Q 530 87 545 87 L 685 87 Q 700 87 700 105 L 700 139 Q 700 155 685 155 L 265 155 Q 250 155 250 170 L 250 195";
-  const webToPrPathD = "M 870 58 L 870 75 Q 870 87 855 87 L 715 87 Q 700 87 700 105 L 700 139 Q 700 155 685 155 L 265 155 Q 250 155 250 170 L 250 195";
+  const appToPrPathD = "M 530 58 L 530 75 Q 530 87 545 87 L 685 87 Q 700 87 700 105 L 700 139 Q 700 155 685 155 L 315 155 Q 300 155 300 170 L 300 195";
+  const webToPrPathD = "M 870 58 L 870 75 Q 870 87 855 87 L 715 87 Q 700 87 700 105 L 700 139 Q 700 155 685 155 L 315 155 Q 300 155 300 170 L 300 195";
 
-  const appToDrPathD = "M 530 58 L 530 75 Q 530 87 545 87 L 685 87 Q 700 87 700 105 L 700 139 Q 700 155 715 155 L 1135 155 Q 1150 155 1150 170 L 1150 195";
-  const webToDrPathD = "M 870 58 L 870 75 Q 870 87 855 87 L 715 87 Q 700 87 700 105 L 700 139 Q 700 155 715 155 L 1135 155 Q 1150 155 1150 170 L 1150 195";
+  const appToDrPathD = "M 530 58 L 530 75 Q 530 87 545 87 L 685 87 Q 700 87 700 105 L 700 139 Q 700 155 715 155 L 1085 155 Q 1100 155 1100 170 L 1100 195";
+  const webToDrPathD = "M 870 58 L 870 75 Q 870 87 855 87 L 715 87 Q 700 87 700 105 L 700 139 Q 700 155 715 155 L 1085 155 Q 1100 155 1100 170 L 1100 195";
 
   return (
     <div className="svg-canvas-container" style={{ overflow: 'hidden' }}>
@@ -144,35 +144,35 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
 
           {/* 3. PR WAF -> PR PLB Line */}
           <path 
-            d="M 250 245 L 250 265" 
+            d="M 300 245 L 300 265" 
             fill="none" 
             className={isPRActive ? "path-active-pr" : "path-static"}
             markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
           />
           {/* 4. PR PLB -> PR AppBackend Line */}
           <path 
-            d="M 250 315 L 250 335" 
+            d="M 300 315 L 300 335" 
             fill="none" 
             className={isPRActive ? "path-active-pr" : "path-static"}
             markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
           />
           {/* 5. PR AppBackend -> PR ILB Line */}
           <path 
-            d="M 250 385 L 250 405" 
+            d="M 300 385 L 300 405" 
             fill="none" 
             className={isPRActive ? "path-active-pr" : "path-static"}
             markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
           />
           {/* 6. PR ILB -> PR RTSP Core Services Line */}
           <path 
-            d="M 250 455 L 250 475" 
+            d="M 300 455 L 300 475" 
             fill="none" 
             className={isPRActive ? "path-active-pr" : "path-static"}
             markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
           />
           {/* 7. PR RTSP Core Services -> PR DB Cluster Line */}
           <path 
-            d="M 250 585 L 250 605" 
+            d="M 300 585 L 300 605" 
             fill="none" 
             className={isPRActive ? "path-active-pr" : "path-static"}
             markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
@@ -182,54 +182,54 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {isPRActive && (
             <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-pr))' }}>
               <circle r="2.5" fill="var(--accent-pr)">
-                <animateMotion path="M 250 245 L 250 265" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 300 245 L 300 265" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-pr)">
-                <animateMotion path="M 250 315 L 250 335" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 300 315 L 300 335" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-pr)">
-                <animateMotion path="M 250 385 L 250 405" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 300 385 L 300 405" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-pr)">
-                <animateMotion path="M 250 455 L 250 475" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 300 455 L 300 475" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-pr)">
-                <animateMotion path="M 250 585 L 250 605" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 300 585 L 300 605" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
             </g>
           )}
 
           {/* 8. DR WAF -> DR PLB Line */}
           <path 
-            d="M 1150 245 L 1150 265" 
+            d="M 1100 245 L 1100 265" 
             fill="none" 
             className={isDRActive ? "path-active-dr" : "path-static"}
             markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
           />
           {/* 9. DR PLB -> DR AppBackend Line */}
           <path 
-            d="M 1150 315 L 1150 335" 
+            d="M 1100 315 L 1100 335" 
             fill="none" 
             className={isDRActive ? "path-active-dr" : "path-static"}
             markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
           />
           {/* 10. DR AppBackend -> DR ILB Line */}
           <path 
-            d="M 1150 385 L 1150 405" 
+            d="M 1100 385 L 1100 405" 
             fill="none" 
             className={isDRActive ? "path-active-dr" : "path-static"}
             markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
           />
           {/* 11. DR ILB -> DR RTSP Core Services Line */}
           <path 
-            d="M 1150 455 L 1150 475" 
+            d="M 1100 455 L 1100 475" 
             fill="none" 
             className={isDRActive ? "path-active-dr" : "path-static"}
             markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
           />
           {/* 12. DR RTSP Core Services -> DR DB Cluster Line */}
           <path 
-            d="M 1150 585 L 1150 605" 
+            d="M 1100 585 L 1100 605" 
             fill="none" 
             className={isDRActive ? "path-active-dr" : "path-static"}
             markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
@@ -239,19 +239,19 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {isDRActive && (
             <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-dr))' }}>
               <circle r="2.5" fill="var(--accent-dr)">
-                <animateMotion path="M 1150 245 L 1150 265" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 1100 245 L 1100 265" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-dr)">
-                <animateMotion path="M 1150 315 L 1150 335" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 1100 315 L 1100 335" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-dr)">
-                <animateMotion path="M 1150 385 L 1150 405" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 1100 385 L 1100 405" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-dr)">
-                <animateMotion path="M 1150 455 L 1150 475" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 1100 455 L 1100 475" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
               <circle r="2.5" fill="var(--accent-dr)">
-                <animateMotion path="M 1150 585 L 1150 605" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 1100 585 L 1100 605" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
             </g>
           )}
@@ -263,15 +263,15 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             const targetY = 192 + idx * 44 + 17.5;
             const isVmn = svc.id?.toUpperCase() === 'VMN';
 
-            // VMN Inbound Flow: VMN (540/860, targetY) -> Site (430/970, 530)
-            // Outbound Flow: Site (430/970, 530) -> Common Service (540/860, targetY)
+            // VMN Inbound Flow: VMN (540/860, targetY) -> Site (450/950, 530)
+            // Outbound Flow: Site (450/950, 530) -> Common Service (540/860, targetY)
             const prSvcPathD = isVmn 
-              ? `M 540 ${targetY} L 465 ${targetY} L 465 530 L 430 530`
-              : `M 430 530 L 465 530 L 465 ${targetY} L 540 ${targetY}`;
+              ? `M 540 ${targetY} L 480 ${targetY} L 480 530 L 450 530`
+              : `M 450 530 L 480 530 L 480 ${targetY} L 540 ${targetY}`;
 
             const drSvcPathD = isVmn
-              ? `M 860 ${targetY} L 935 ${targetY} L 935 530 L 970 530`
-              : `M 970 530 L 935 530 L 935 ${targetY} L 860 ${targetY}`;
+              ? `M 860 ${targetY} L 920 ${targetY} L 920 530 L 950 530`
+              : `M 950 530 L 920 530 L 920 ${targetY} L 860 ${targetY}`;
 
             return (
               <g key={`conn-${svc.id}`}>
@@ -313,7 +313,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             /* PR Active: Replication flows Left -> Right */
             <>
               <path 
-                d="M 415 670 L 985 670" 
+                d="M 465 670 L 935 670" 
                 fill="none" 
                 stroke="var(--accent-amber)"
                 strokeWidth="2.5"
@@ -325,10 +325,10 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               />
               <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-amber))' }}>
                 <circle r="3" fill="var(--accent-amber)">
-                  <animateMotion path="M 415 670 L 985 670" dur="4.5s" repeatCount="indefinite" calcMode="linear" />
+                  <animateMotion path="M 465 670 L 935 670" dur="4.5s" repeatCount="indefinite" calcMode="linear" />
                 </circle>
                 <circle r="3" fill="var(--accent-amber)">
-                  <animateMotion path="M 415 670 L 985 670" dur="4.5s" begin="2.25s" repeatCount="indefinite" calcMode="linear" />
+                  <animateMotion path="M 465 670 L 935 670" dur="4.5s" begin="2.25s" repeatCount="indefinite" calcMode="linear" />
                 </circle>
               </g>
             </>
@@ -336,7 +336,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             /* DR Active: Replication REVERSES Right -> Left */
             <>
               <path 
-                d="M 985 670 L 415 670" 
+                d="M 935 670 L 465 670" 
                 fill="none" 
                 stroke="var(--accent-amber)"
                 strokeWidth="2.5"
@@ -348,10 +348,10 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               />
               <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-amber))' }}>
                 <circle r="3" fill="var(--accent-amber)">
-                  <animateMotion path="M 985 670 L 415 670" dur="4.5s" repeatCount="indefinite" calcMode="linear" />
+                  <animateMotion path="M 935 670 L 465 670" dur="4.5s" repeatCount="indefinite" calcMode="linear" />
                 </circle>
                 <circle r="3" fill="var(--accent-amber)">
-                  <animateMotion path="M 985 670 L 415 670" dur="4.5s" begin="2.25s" repeatCount="indefinite" calcMode="linear" />
+                  <animateMotion path="M 935 670 L 465 670" dur="4.5s" begin="2.25s" repeatCount="indefinite" calcMode="linear" />
                 </circle>
               </g>
             </>
@@ -362,9 +362,9 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* ============================================================ */}
 
           {/* PR Site Outer Container (Rawale DC) */}
-          <g transform="translate(55, 175)">
+          <g transform="translate(110, 175)">
             <rect 
-              width="390" 
+              width="380" 
               height="565" 
               rx="16" 
               fill="var(--svg-region-pr-bg)" 
@@ -372,16 +372,16 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               strokeWidth="1.5" 
               strokeDasharray="8 4"
             />
-            <rect x="85" y="552" width="220" height="26" rx="6" fill="var(--accent-pr)" stroke="var(--accent-pr)" />
-            <text x="195" y="569" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
+            <rect x="80" y="552" width="220" height="26" rx="6" fill="var(--accent-pr)" stroke="var(--accent-pr)" />
+            <text x="190" y="569" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
               PRIMARY REGION (RAWALE DC)
             </text>
           </g>
 
           {/* DR Site Outer Container (Gachibowli DC) */}
-          <g transform="translate(955, 175)">
+          <g transform="translate(910, 175)">
             <rect 
-              width="390" 
+              width="380" 
               height="565" 
               rx="16" 
               fill="var(--svg-region-dr-bg)" 
@@ -389,8 +389,8 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               strokeWidth="1.5" 
               strokeDasharray="8 4"
             />
-            <rect x="75" y="552" width="240" height="26" rx="6" fill="var(--accent-dr)" stroke="var(--accent-dr)" />
-            <text x="195" y="569" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
+            <rect x="70" y="552" width="240" height="26" rx="6" fill="var(--accent-dr)" stroke="var(--accent-dr)" />
+            <text x="190" y="569" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
               DISASTER RECOVERY (GACHIBOWLI DC)
             </text>
           </g>
@@ -471,7 +471,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* ============================================================ */}
 
           {/* PR WAF-PR-252 */}
-          <g transform="translate(150, 195)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'WAF', name: `Web Application Firewall (${prConfig?.wafName || 'WAF-PR-252'})`, ipPR: prConfig?.wafIp || '10.x.x.252', type: 'Edge Security' })}>
+          <g transform="translate(200, 195)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'WAF', name: `Web Application Firewall (${prConfig?.wafName || 'WAF-PR-252'})`, ipPR: prConfig?.wafIp || '10.x.x.252', type: 'Edge Security' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="2" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
@@ -484,7 +484,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* PR Public Load Balancer (PLB) */}
-          <g transform="translate(150, 265)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'PLB', name: 'Public Load Balancer (PR PLB)', domain: prConfig?.plbEndpoint || 'cbdc-plb.bank.sbi', type: 'Load Balancer' })}>
+          <g transform="translate(200, 265)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'PLB', name: 'Public Load Balancer (PR PLB)', domain: prConfig?.plbEndpoint || 'cbdc-plb.bank.sbi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -497,7 +497,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* PR AppBackend Gateway (Positioned Between PLB and ILB) */}
-          <g transform="translate(150, 335)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'AppBackend', name: 'AppBackend Gateway (PR)', domain: 'appbackend.bank.sbi', type: 'Application Backend Gateway' })}>
+          <g transform="translate(200, 335)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'AppBackend', name: 'AppBackend Gateway (PR)', domain: 'appbackend.bank.sbi', type: 'Application Backend Gateway' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
@@ -508,7 +508,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* PR Internal Load Balancer (ILB) */}
-          <g transform="translate(150, 405)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'ILB', name: 'Internal Load Balancer (PR ILB)', domain: prConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi', type: 'Load Balancer' })}>
+          <g transform="translate(200, 405)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'ILB', name: 'Internal Load Balancer (PR ILB)', domain: prConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -521,11 +521,11 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* PR RTSP CORE SERVICES APPLICATION VM CLUSTER */}
-          <g transform="translate(70, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'RTSP Core Services Cluster (PR)', type: 'Microservice Cluster (6 Applications)', status: 'RUNNING' })}>
-            <rect width="240" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
-            <text x="12" y="22" fill="var(--accent-pr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (PR)</text>
+          <g transform="translate(150, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'RTSP Core Services Cluster (PR)', type: 'Microservice Cluster (6 Applications)', status: 'RUNNING' })}>
+            <rect width="300" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
+            <text x="15" y="22" fill="var(--accent-pr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (PR)</text>
             
-            <g transform="translate(198, 8)">
+            <g transform="translate(258, 8)">
               <rect width="30" height="30" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
               <g transform="translate(-1, -1)" color="var(--accent-pr)">
                 <use href="#icon-server" />
@@ -533,61 +533,61 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             </g>
 
             {/* Row 1 Applications */}
-            <g transform="translate(10, 34)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">📱 rtsp-app</text>
+            <g transform="translate(12, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📱 rtsp-app</text>
             </g>
 
-            <g transform="translate(85, 34)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🪙 mint</text>
+            <g transform="translate(107, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🪙 mint</text>
             </g>
 
-            <g transform="translate(160, 34)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🏦 BIG</text>
+            <g transform="translate(202, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🏦 BIG</text>
             </g>
 
             {/* Row 2 Applications */}
-            <g transform="translate(10, 68)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">💻 AppBackend</text>
+            <g transform="translate(12, 68)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">💻 AppBackend</text>
             </g>
 
-            <g transform="translate(85, 68)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">📊 Admin</text>
+            <g transform="translate(107, 68)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📊 Admin Portal</text>
             </g>
 
-            <g transform="translate(160, 68)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🛍️ Merchant</text>
+            <g transform="translate(202, 68)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🛍️ Merchant</text>
             </g>
           </g>
 
-          {/* INDEPENDENT PSO SERVICE (PR RAWALE DC) */}
-          <g transform="translate(320, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'pso-pr', name: 'PSO Service (PR Rawale)', domain: prConfig?.psoEndpoint || 'pso-pr.bank.sbi', type: 'Independent Payment System Operator Service', status: 'ACTIVE' })}>
-            <rect width="110" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
-            <rect x="8" y="8" width="32" height="32" rx="8" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
-            <text x="24" y="29" textAnchor="middle" fontSize="15">⚙️</text>
-            <text x="12" y="55" fill="var(--svg-card-title)" fontSize="11" fontWeight="700" fontFamily="Outfit">PSO (PR)</text>
-            <text x="12" y="70" fill="var(--accent-pr)" fontSize="8.5" fontFamily="JetBrains Mono">{prConfig?.psoEndpoint || 'pso-pr.bank.sbi'}</text>
-            <rect x="12" y="82" width="86" height="18" rx="4" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
-            <text x="55" y="94.5" textAnchor="middle" fill="var(--accent-pr)" fontSize="8" fontWeight="700" fontFamily="Inter">SITE PSO SERVICE</text>
+          {/* INDEPENDENT EXTERNAL PSO SERVICE (OUTSIDE PR SITE BOX AT X=10) */}
+          <g transform="translate(10, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'pso-pr', name: 'PSO Service (PR Rawale)', domain: prConfig?.psoEndpoint || 'pso-pr.bank.sbi', type: 'External Consumed Payment System Operator Service', status: 'ACTIVE' })}>
+            <rect width="90" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
+            <rect x="6" y="8" width="30" height="30" rx="8" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
+            <text x="21" y="28" textAnchor="middle" fontSize="14">⚙️</text>
+            <text x="10" y="54" fill="var(--svg-card-title)" fontSize="10.5" fontWeight="700" fontFamily="Outfit">PSO (PR)</text>
+            <text x="10" y="68" fill="var(--accent-pr)" fontSize="7.5" fontFamily="JetBrains Mono">{prConfig?.psoEndpoint || 'pso-pr.bank.sbi'}</text>
+            <rect x="8" y="80" width="74" height="18" rx="4" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
+            <text x="45" y="92.5" textAnchor="middle" fill="var(--accent-pr)" fontSize="7.5" fontWeight="700" fontFamily="Inter">EXTERNAL PSO</text>
           </g>
 
-          {/* PR Core Services -> PSO (PR) Flow Line */}
-          <path d="M 310 530 L 320 530" fill="none" className={isPRActive ? "path-active-pr" : "path-static"} markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"} />
+          {/* PR Core Services -> External PSO (PR) Flow Line */}
+          <path d="M 150 530 L 100 530" fill="none" className={isPRActive ? "path-active-pr" : "path-static"} markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"} />
           {isPRActive && (
             <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-pr))' }}>
               <circle r="2" fill="var(--accent-pr)">
-                <animateMotion path="M 310 530 L 320 530" dur="0.8s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 150 530 L 100 530" dur="0.8s" repeatCount="indefinite" calcMode="linear" />
               </circle>
             </g>
           )}
 
           {/* GROUPED PR DATABASE CLUSTER CONTAINER */}
-          <g transform="translate(85, 605)">
+          <g transform="translate(135, 605)">
             <rect width="330" height="105" rx="12" fill="var(--svg-card-bg)" stroke={isPRActive ? "var(--accent-pr)" : "#94a3b8"} strokeWidth="1.5" />
             <text x="15" y="22" fill={isPRActive ? "var(--accent-pr)" : "var(--svg-card-sub)"} fontSize="11" fontWeight="700" fontFamily="Inter">
               ORACLE DB CLUSTER (PR RAWALE)
@@ -633,7 +633,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* ============================================================ */}
           {/* LAYER 5: DISASTER RECOVERY NODES WITH GROUPED DB CLUSTER (DR) */}
           {/* =======================================          {/* DR WAF-DR-230 */}
-          <g transform="translate(1050, 195)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'WAF', name: `Web Application Firewall (${drConfig?.wafName || 'WAF-DR-230'})`, ipDR: drConfig?.wafIp || '10.x.x.230', type: 'Edge Security' })}>
+          <g transform="translate(1000, 195)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'WAF', name: `Web Application Firewall (${drConfig?.wafName || 'WAF-DR-230'})`, ipDR: drConfig?.wafIp || '10.x.x.230', type: 'Edge Security' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="2" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
@@ -646,7 +646,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* DR Public Load Balancer (PLB) */}
-          <g transform="translate(1050, 265)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'PLB', name: 'Public Load Balancer (DR PLB)', domain: drConfig?.plbEndpoint || 'cbdc-plb.bank.sbi', type: 'Load Balancer' })}>
+          <g transform="translate(1000, 265)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'PLB', name: 'Public Load Balancer (DR PLB)', domain: drConfig?.plbEndpoint || 'cbdc-plb.bank.sbi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -659,7 +659,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* DR AppBackend Gateway (Positioned Between PLB and ILB) */}
-          <g transform="translate(1050, 335)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'AppBackend', name: 'AppBackend Gateway (DR)', domain: 'appbackend.bank.sbi', type: 'Application Backend Gateway' })}>
+          <g transform="translate(1000, 335)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'AppBackend', name: 'AppBackend Gateway (DR)', domain: 'appbackend.bank.sbi', type: 'Application Backend Gateway' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
@@ -670,7 +670,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* DR Internal Load Balancer (ILB) */}
-          <g transform="translate(1050, 405)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'ILB', name: 'Internal Load Balancer (DR ILB)', domain: drConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi', type: 'Load Balancer' })}>
+          <g transform="translate(1000, 405)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'ILB', name: 'Internal Load Balancer (DR ILB)', domain: drConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -683,11 +683,11 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* DR RTSP CORE SERVICES APPLICATION VM CLUSTER */}
-          <g transform="translate(970, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'RTSP Core Services Cluster (DR Gachibowli)', type: 'Microservice Cluster (6 Applications)', status: isDRActive ? 'RUNNING' : 'STANDBY' })}>
-            <rect width="240" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
-            <text x="12" y="22" fill="var(--accent-dr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (DR)</text>
+          <g transform="translate(950, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'RTSP Core Services Cluster (DR Gachibowli)', type: 'Microservice Cluster (6 Applications)', status: isDRActive ? 'RUNNING' : 'STANDBY' })}>
+            <rect width="300" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
+            <text x="15" y="22" fill="var(--accent-dr)" fontSize="11" fontWeight="700" fontFamily="Inter">RTSP Core Services (DR)</text>
             
-            <g transform="translate(198, 8)">
+            <g transform="translate(258, 8)">
               <rect width="30" height="30" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
               <g transform="translate(-1, -1)" color="var(--accent-dr)">
                 <use href="#icon-server" />
@@ -695,61 +695,61 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             </g>
 
             {/* Row 1 Applications */}
-            <g transform="translate(10, 34)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">📱 rtsp-app</text>
+            <g transform="translate(12, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📱 rtsp-app</text>
             </g>
 
-            <g transform="translate(85, 34)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🪙 mint</text>
+            <g transform="translate(107, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🪙 mint</text>
             </g>
 
-            <g transform="translate(160, 34)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🏦 BIG</text>
+            <g transform="translate(202, 34)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🏦 BIG</text>
             </g>
 
             {/* Row 2 Applications */}
-            <g transform="translate(10, 68)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">💻 AppBackend</text>
+            <g transform="translate(12, 68)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">💻 AppBackend</text>
             </g>
 
-            <g transform="translate(85, 68)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">📊 Admin</text>
+            <g transform="translate(107, 68)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">📊 Admin Portal</text>
             </g>
 
-            <g transform="translate(160, 68)">
-              <rect width="68" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
-              <text x="34" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="8.5" fontWeight="600" fontFamily="Inter">🛍️ Merchant</text>
+            <g transform="translate(202, 68)">
+              <rect width="86" height="25" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-pill-stroke)" />
+              <text x="43" y="16.5" textAnchor="middle" fill="var(--svg-pill-text)" fontSize="9" fontWeight="600" fontFamily="Inter">🛍️ Merchant</text>
             </g>
           </g>
 
-          {/* INDEPENDENT PSO SERVICE (DR GACHIBOWLI DC) */}
-          <g transform="translate(1220, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'pso-dr', name: 'PSO Service (DR Gachibowli)', domain: drConfig?.psoEndpoint || 'pso-dr.bank.sbi', type: 'Independent Payment System Operator Service', status: isDRActive ? 'ACTIVE' : 'STANDBY' })}>
-            <rect width="110" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
-            <rect x="8" y="8" width="32" height="32" rx="8" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
-            <text x="24" y="29" textAnchor="middle" fontSize="15">⚙️</text>
-            <text x="12" y="55" fill="var(--svg-card-title)" fontSize="11" fontWeight="700" fontFamily="Outfit">PSO (DR)</text>
-            <text x="12" y="70" fill="var(--accent-dr)" fontSize="8.5" fontFamily="JetBrains Mono">{drConfig?.psoEndpoint || 'pso-dr.bank.sbi'}</text>
-            <rect x="12" y="82" width="86" height="18" rx="4" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
-            <text x="55" y="94.5" textAnchor="middle" fill="var(--accent-dr)" fontSize="8" fontWeight="700" fontFamily="Inter">SITE PSO SERVICE</text>
+          {/* INDEPENDENT EXTERNAL PSO SERVICE (OUTSIDE DR SITE BOX AT X=1300) */}
+          <g transform="translate(1300, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'pso-dr', name: 'PSO Service (DR Gachibowli)', domain: drConfig?.psoEndpoint || 'pso-dr.bank.sbi', type: 'External Consumed Payment System Operator Service', status: isDRActive ? 'ACTIVE' : 'STANDBY' })}>
+            <rect width="90" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
+            <rect x="6" y="8" width="30" height="30" rx="8" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
+            <text x="21" y="28" textAnchor="middle" fontSize="14">⚙️</text>
+            <text x="10" y="54" fill="var(--svg-card-title)" fontSize="10.5" fontWeight="700" fontFamily="Outfit">PSO (DR)</text>
+            <text x="10" y="68" fill="var(--accent-dr)" fontSize="7.5" fontFamily="JetBrains Mono">{drConfig?.psoEndpoint || 'pso-dr.bank.sbi'}</text>
+            <rect x="8" y="80" width="74" height="18" rx="4" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
+            <text x="45" y="92.5" textAnchor="middle" fill="var(--accent-dr)" fontSize="7.5" fontWeight="700" fontFamily="Inter">EXTERNAL PSO</text>
           </g>
 
-          {/* DR Core Services -> PSO (DR) Flow Line */}
-          <path d="M 1210 530 L 1220 530" fill="none" className={isDRActive ? "path-active-dr" : "path-static"} markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"} />
+          {/* DR Core Services -> External PSO (DR) Flow Line */}
+          <path d="M 1250 530 L 1300 530" fill="none" className={isDRActive ? "path-active-dr" : "path-static"} markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"} />
           {isDRActive && (
             <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-dr))' }}>
               <circle r="2" fill="var(--accent-dr)">
-                <animateMotion path="M 1210 530 L 1220 530" dur="0.8s" repeatCount="indefinite" calcMode="linear" />
+                <animateMotion path="M 1250 530 L 1300 530" dur="0.8s" repeatCount="indefinite" calcMode="linear" />
               </circle>
             </g>
           )}
 
           {/* GROUPED DR DATABASE CLUSTER CONTAINER */}
-          <g transform="translate(985, 605)">
+          <g transform="translate(935, 605)">
             <rect width="330" height="105" rx="12" fill="var(--svg-card-bg)" stroke={isDRActive ? "var(--accent-dr)" : "#94a3b8"} strokeWidth="1.5" />
             <text x="15" y="22" fill={isDRActive ? "var(--accent-dr)" : "var(--svg-card-sub)"} fontSize="11" fontWeight="700" fontFamily="Inter">
               ORACLE DB CLUSTER (DR GACHIBOWLI)
