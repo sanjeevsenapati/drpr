@@ -465,37 +465,37 @@ body {
 /* PROMINENT Joint Connector Lines Styling */
 .path-active-pr {
   stroke: var(--accent-pr) !important;
-  stroke-width: 2.5px !important;
-  stroke-dasharray: 10 5 !important;
+  stroke-width: 1.5px !important;
+  stroke-dasharray: 6 4 !important;
   stroke-linecap: round !important;
   stroke-linejoin: round !important;
   animation: flow-dash-pr 1.2s linear infinite !important;
-  filter: drop-shadow(0 0 6px var(--accent-pr-glow)) !important;
+  filter: drop-shadow(0 0 4px var(--accent-pr-glow)) !important;
   opacity: 1 !important;
   will-change: stroke-dashoffset;
 }
 
 .path-active-dr {
   stroke: var(--accent-dr) !important;
-  stroke-width: 2.5px !important;
-  stroke-dasharray: 10 5 !important;
+  stroke-width: 1.5px !important;
+  stroke-dasharray: 6 4 !important;
   stroke-linecap: round !important;
   stroke-linejoin: round !important;
   animation: flow-dash-dr 1.2s linear infinite !important;
-  filter: drop-shadow(0 0 6px var(--accent-dr-glow)) !important;
+  filter: drop-shadow(0 0 4px var(--accent-dr-glow)) !important;
   opacity: 1 !important;
   will-change: stroke-dashoffset;
 }
 
 .path-static {
   stroke: #94a3b8 !important;
-  stroke-width: 1.5px !important;
+  stroke-width: 1px !important;
   stroke-dasharray: none !important;
   stroke-linecap: round !important;
   stroke-linejoin: round !important;
   animation: none !important;
   filter: none !important;
-  opacity: 0.35 !important;
+  opacity: 0.25 !important;
 }
 
 /* Right Component Inspector Drawer */

@@ -180,20 +180,20 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
 
           {/* Continuous Vertical Slow Energy Flow Particles for PR */}
           {isPRActive && (
-            <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-pr))' }}>
-              <circle r="2.5" fill="var(--accent-pr)">
+            <g style={{ filter: 'drop-shadow(0 0 3px var(--accent-pr))' }}>
+              <circle r="1.8" fill="var(--accent-pr)">
                 <animateMotion path="M 300 245 L 300 265" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
-              <circle r="2.5" fill="var(--accent-pr)">
+              <circle r="1.8" fill="var(--accent-pr)">
                 <animateMotion path="M 300 315 L 300 335" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
-              <circle r="2.5" fill="var(--accent-pr)">
+              <circle r="1.8" fill="var(--accent-pr)">
                 <animateMotion path="M 300 385 L 300 405" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
-              <circle r="2.5" fill="var(--accent-pr)">
+              <circle r="1.8" fill="var(--accent-pr)">
                 <animateMotion path="M 300 455 L 300 475" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
-              <circle r="2.5" fill="var(--accent-pr)">
+              <circle r="1.8" fill="var(--accent-pr)">
                 <animateMotion path="M 300 585 L 300 605" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
             </g>
@@ -237,46 +237,48 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
 
           {/* Continuous Vertical Slow Energy Flow Particles for DR */}
           {isDRActive && (
-            <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-dr))' }}>
-              <circle r="2.5" fill="var(--accent-dr)">
+            <g style={{ filter: 'drop-shadow(0 0 3px var(--accent-dr))' }}>
+              <circle r="1.8" fill="var(--accent-dr)">
                 <animateMotion path="M 1100 245 L 1100 265" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
-              <circle r="2.5" fill="var(--accent-dr)">
+              <circle r="1.8" fill="var(--accent-dr)">
                 <animateMotion path="M 1100 315 L 1100 335" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
-              <circle r="2.5" fill="var(--accent-dr)">
+              <circle r="1.8" fill="var(--accent-dr)">
                 <animateMotion path="M 1100 385 L 1100 405" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
-              <circle r="2.5" fill="var(--accent-dr)">
+              <circle r="1.8" fill="var(--accent-dr)">
                 <animateMotion path="M 1100 455 L 1100 475" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
-              <circle r="2.5" fill="var(--accent-dr)">
+              <circle r="1.8" fill="var(--accent-dr)">
                 <animateMotion path="M 1100 585 L 1100 605" dur="1.2s" repeatCount="indefinite" calcMode="linear" />
               </circle>
             </g>
           )}
 
           {/* ============================================================ */}
-          {/* CONNECTING PRIMARY REGION & DR REGION VIA ORTHOGONAL BUS TO COMMON SERVICES */}
+          {/* CONNECTING PRIMARY REGION & DR REGION VIA DEDICATED INDIVIDUAL PATHS TO COMMON SERVICES */}
           {/* ============================================================ */}
           {commonServicesList.map((svc, idx) => {
             const itemStep = 38;
             const targetY = 190 + idx * itemStep + 15;
+            const startY = 485 + idx * 9;
             const isVmn = svc.id?.toUpperCase() === 'VMN';
 
-            // VMN Inbound Flow: VMN (540/860, targetY) -> Site (450/950, 530)
-            // Outbound Flow: Site (450/950, 530) -> Common Service (540/860, targetY)
+            // Individual Smooth Dedicated Bezier Path for each Common Service line
+            // VMN Inbound Flow: VMN (540/860, targetY) -> Site (450/950, startY)
+            // Outbound Flow: Site (450/950, startY) -> Common Service (540/860, targetY)
             const prSvcPathD = isVmn 
-              ? `M 540 ${targetY} L 480 ${targetY} L 480 530 L 450 530`
-              : `M 450 530 L 480 530 L 480 ${targetY} L 540 ${targetY}`;
+              ? `M 540 ${targetY} C 505 ${targetY}, 485 ${startY}, 450 ${startY}`
+              : `M 450 ${startY} C 485 ${startY}, 505 ${targetY}, 540 ${targetY}`;
 
             const drSvcPathD = isVmn
-              ? `M 860 ${targetY} L 920 ${targetY} L 920 530 L 950 530`
-              : `M 950 530 L 920 530 L 920 ${targetY} L 860 ${targetY}`;
+              ? `M 860 ${targetY} C 895 ${targetY}, 915 ${startY}, 950 ${startY}`
+              : `M 950 ${startY} C 915 ${startY}, 895 ${targetY}, 860 ${targetY}`;
 
             return (
               <g key={`conn-${svc.id}`}>
-                {/* PR <-> Common Service Orthogonal Bus Path */}
+                {/* PR <-> Common Service Individual Dedicated Path */}
                 <path 
                   d={prSvcPathD}
                   fill="none" 
@@ -284,14 +286,14 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
                   markerEnd={isPRActive ? "url(#arrow-pr)" : "url(#arrow-static)"}
                 />
                 {isPRActive && (
-                  <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-pr))' }}>
-                    <circle r="2.5" fill="var(--accent-pr)">
-                      <animateMotion path={prSvcPathD} dur={`${2.2 + (idx % 4) * 0.3}s`} repeatCount="indefinite" calcMode="linear" />
+                  <g style={{ filter: 'drop-shadow(0 0 3px var(--accent-pr))' }}>
+                    <circle r="1.8" fill="var(--accent-pr)">
+                      <animateMotion path={prSvcPathD} dur={`${2.0 + (idx % 5) * 0.25}s`} repeatCount="indefinite" calcMode="linear" />
                     </circle>
                   </g>
                 )}
 
-                {/* DR <-> Common Service Orthogonal Bus Path */}
+                {/* DR <-> Common Service Individual Dedicated Path */}
                 <path 
                   d={drSvcPathD}
                   fill="none" 
@@ -299,9 +301,9 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
                   markerEnd={isDRActive ? "url(#arrow-dr)" : "url(#arrow-static)"}
                 />
                 {isDRActive && (
-                  <g style={{ filter: 'drop-shadow(0 0 4px var(--accent-dr))' }}>
-                    <circle r="2.5" fill="var(--accent-dr)">
-                      <animateMotion path={drSvcPathD} dur={`${2.2 + (idx % 4) * 0.3}s`} repeatCount="indefinite" calcMode="linear" />
+                  <g style={{ filter: 'drop-shadow(0 0 3px var(--accent-dr))' }}>
+                    <circle r="1.8" fill="var(--accent-dr)">
+                      <animateMotion path={drSvcPathD} dur={`${2.0 + (idx % 5) * 0.25}s`} repeatCount="indefinite" calcMode="linear" />
                     </circle>
                   </g>
                 )}
