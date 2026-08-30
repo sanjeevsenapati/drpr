@@ -399,15 +399,15 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           <g transform="translate(515, 175)">
             <rect 
               width="370" 
-              height="435" 
+              height="565" 
               rx="16" 
               fill="var(--svg-region-cs-bg)" 
               stroke="var(--accent-amber)" 
               strokeWidth="1.5" 
               strokeDasharray="8 4"
             />
-            <rect x="70" y="422" width="230" height="26" rx="6" fill="var(--accent-amber)" stroke="var(--accent-amber)" />
-            <text x="185" y="439" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
+            <rect x="70" y="552" width="230" height="26" rx="6" fill="var(--accent-amber)" stroke="var(--accent-amber)" />
+            <text x="185" y="569" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="700" fontFamily="Inter">
               COMMON SERVICES (SHARED VMN)
             </text>
           </g>
