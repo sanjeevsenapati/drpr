@@ -261,12 +261,21 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* ============================================================ */}
           {commonServicesList.map((svc, idx) => {
             const targetY = 192 + idx * 44 + 17.5;
-            const prSvcPathD = `M 430 530 L 465 530 L 465 ${targetY} L 540 ${targetY}`;
-            const drSvcPathD = `M 970 530 L 935 530 L 935 ${targetY} L 860 ${targetY}`;
+            const isVmn = svc.id?.toUpperCase() === 'VMN';
+
+            // VMN Inbound Flow: VMN (540/860, targetY) -> Site (430/970, 530)
+            // Outbound Flow: Site (430/970, 530) -> Common Service (540/860, targetY)
+            const prSvcPathD = isVmn 
+              ? `M 540 ${targetY} L 465 ${targetY} L 465 530 L 430 530`
+              : `M 430 530 L 465 530 L 465 ${targetY} L 540 ${targetY}`;
+
+            const drSvcPathD = isVmn
+              ? `M 860 ${targetY} L 935 ${targetY} L 935 530 L 970 530`
+              : `M 970 530 L 935 530 L 935 ${targetY} L 860 ${targetY}`;
 
             return (
               <g key={`conn-${svc.id}`}>
-                {/* PR -> Common Service Orthogonal Bus Path */}
+                {/* PR <-> Common Service Orthogonal Bus Path */}
                 <path 
                   d={prSvcPathD}
                   fill="none" 
@@ -281,7 +290,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
                   </g>
                 )}
 
-                {/* DR -> Common Service Orthogonal Bus Path */}
+                {/* DR <-> Common Service Orthogonal Bus Path */}
                 <path 
                   d={drSvcPathD}
                   fill="none" 
@@ -822,10 +831,21 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
                 <text x="145" y="21.5" fill="var(--svg-card-sub)" fontSize="9" fontFamily="JetBrains Mono">{svc.endpoint}</text>
 
                 {/* Connection Status Badge */}
-                <rect x="252" y="8.5" width="60" height="18" rx="4" fill={activeColor} opacity="0.15" />
-                <text x="282" y="20.5" textAnchor="middle" fill={activeColor} fontSize="8" fontWeight="700" fontFamily="Inter">
-                  {isPRActive ? '⚡ PR LINK' : '⚡ DR LINK'}
-                </text>
+                {svc.id?.toUpperCase() === 'VMN' ? (
+                  <>
+                    <rect x="238" y="8.5" width="74" height="18" rx="4" fill="var(--accent-amber)" opacity="0.2" stroke="var(--accent-amber)" strokeWidth="1" />
+                    <text x="275" y="20.5" textAnchor="middle" fill="var(--accent-amber)" fontSize="8" fontWeight="700" fontFamily="Inter">
+                      📥 INBOUND ➔ SITE
+                    </text>
+                  </>
+                ) : (
+                  <>
+                    <rect x="252" y="8.5" width="60" height="18" rx="4" fill={activeColor} opacity="0.15" />
+                    <text x="282" y="20.5" textAnchor="middle" fill={activeColor} fontSize="8" fontWeight="700" fontFamily="Inter">
+                      {isPRActive ? '⚡ PR LINK' : '⚡ DR LINK'}
+                    </text>
+                  </>
+                )}
               </g>
             );
           })}
