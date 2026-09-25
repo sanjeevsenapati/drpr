@@ -1,0 +1,18 @@
+{
+  "_instructions": "Change 'activeSite' to 'PR' for Primary Region (Rawale DC) or 'DR' for Disaster Recovery (Gachibowli DC)",
+  "activeSite": "PR",
+  "prSetting": {
+    "siteName": "Primary Region (RAWALE DC)",
+    "wafIp": "WAF-PR-252 (10.x.x.252)",
+    "status": "HEALTHY",
+    "dbRole": "READ WRITE (Primary)"
+  },
+  "drSetting": {
+    "siteName": "Disaster Recovery Region (GACHIBOWLI DC)",
+    "wafIp": "WAF-DR-230 (10.x.x.230)",
+    "status": "HEALTHY",
+    "dbRole": "READ ONLY (Data Guard Standby)"
+  },
+  "lastUpdated": "2026-08-25T23:53:00Z",
+  "updatedBy": "System Administrator"
+}
