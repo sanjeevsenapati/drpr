@@ -1,0 +1,273 @@
+{
+  "diagram": {
+    "id": "rtsp-mna-topology",
+    "title": "SHABI e-Rupee Architecture Dashboard",
+    "version": "2.0",
+    "viewBox": {
+      "width": 1440,
+      "height": 760
+    }
+  },
+  "zones": [
+    {
+      "id": "zone-client",
+      "title": "CLIENT & MERCHANT ECOSYSTEM",
+      "color": "var(--accent-dr)",
+      "bgColor": "rgba(59, 130, 246, 0.04)",
+      "column": 1,
+      "width": 220
+    },
+    {
+      "id": "zone-dmz",
+      "title": "DMZ & EDGE SECURITY",
+      "color": "var(--accent-amber)",
+      "bgColor": "rgba(245, 158, 11, 0.04)",
+      "column": 2,
+      "width": 220
+    },
+    {
+      "id": "zone-core",
+      "title": "RTSP GW (MULTI-NODE CORE)",
+      "color": "var(--accent-pr)",
+      "bgColor": "rgba(16, 185, 129, 0.04)",
+      "column": 3,
+      "width": 440
+    },
+    {
+      "id": "zone-bank",
+      "title": "BANK CORP ZONE SUBSYSTEMS",
+      "color": "#9333ea",
+      "bgColor": "rgba(147, 51, 234, 0.04)",
+      "column": 4,
+      "width": 240
+    },
+    {
+      "id": "zone-npci",
+      "title": "NPCI & RBI DLT NETWORK",
+      "color": "var(--accent-rose)",
+      "bgColor": "rgba(244, 63, 94, 0.04)",
+      "column": 5,
+      "width": 200
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-app",
+      "zoneId": "zone-client",
+      "label": "e-Rupee Mobile App",
+      "subLabel": "erupeeapp.shabi.bank.in",
+      "icon": "📱",
+      "type": "Consumer Wallet App",
+      "techStack": "Flutter / Native iOS & Android"
+    },
+    {
+      "id": "node-merchant-app",
+      "zoneId": "zone-client",
+      "label": "Merchant App",
+      "subLabel": "merchant.erupee.shabi",
+      "icon": "🛍️",
+      "type": "Merchant Acceptance App",
+      "techStack": "Android POS / Mobile"
+    },
+    {
+      "id": "node-waf",
+      "zoneId": "zone-dmz",
+      "label": "WAF (Edge Firewall)",
+      "subLabel": "DDoS & OWASP Shield",
+      "icon": "🛡️",
+      "type": "Edge Security",
+      "ipAddress": "192.168.1.1"
+    },
+    {
+      "id": "node-nginx",
+      "zoneId": "zone-dmz",
+      "label": "NGINX Reverse Proxy",
+      "subLabel": "SSL Termination & Proxy",
+      "icon": "⚡",
+      "type": "Reverse Proxy",
+      "techStack": "Nginx / F5 BigIP"
+    },
+    {
+      "id": "node-appgw",
+      "zoneId": "zone-dmz",
+      "label": "APP GW (API Gateway)",
+      "subLabel": "OAuth2 & Rate Limiter",
+      "icon": "🌐",
+      "type": "API Gateway",
+      "techStack": "Spring Cloud Gateway"
+    },
+    {
+      "id": "node-rtsp-app",
+      "zoneId": "zone-core",
+      "label": "RTSP APP Cluster",
+      "subLabel": "Core Payment Engine",
+      "icon": "📱",
+      "type": "Microservice Cluster",
+      "nodeCount": 12,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "node-mint",
+      "zoneId": "zone-core",
+      "label": "MinT (Digital Minting)",
+      "subLabel": "Token Minting Service",
+      "icon": "🪙",
+      "type": "Microservice Cluster",
+      "nodeCount": 6,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "node-kafka",
+      "zoneId": "zone-core",
+      "label": "KAFKA Event Cluster",
+      "subLabel": "Event Queue",
+      "icon": "📨",
+      "type": "Messaging Bus",
+      "techStack": "Apache Kafka"
+    },
+    {
+      "id": "node-redis",
+      "zoneId": "zone-core",
+      "label": "REDIS Cache Cluster",
+      "subLabel": "In-Memory HA Cache",
+      "icon": "⚡",
+      "type": "Cache Store",
+      "techStack": "Redis Sentinel Cluster"
+    },
+    {
+      "id": "node-db-rtsp",
+      "zoneId": "zone-core",
+      "label": "RTSP Oracle DB",
+      "subLabel": "RAC Active-Active",
+      "icon": "🗄️",
+      "type": "Database Engine",
+      "techStack": "Oracle DB RAC & Data Guard"
+    },
+    {
+      "id": "node-cbs",
+      "zoneId": "zone-bank",
+      "label": "CBS (Core Banking)",
+      "subLabel": "Account Debit / Credit API",
+      "icon": "🏦",
+      "type": "Bank Core System",
+      "techStack": "TCS BaNCS / Finacle"
+    },
+    {
+      "id": "node-esb",
+      "zoneId": "zone-bank",
+      "label": "Bank Middleware (ESB)",
+      "subLabel": "Enterprise Integration Bus",
+      "icon": "🔄",
+      "type": "Integration Middleware",
+      "techStack": "IBM Integration Bus / WSO2"
+    },
+    {
+      "id": "node-pso",
+      "zoneId": "zone-npci",
+      "label": "NPCI NET (PSO)",
+      "subLabel": "National Payment Switch",
+      "icon": "🌐",
+      "type": "Payment System Operator",
+      "status": "EXTERNAL"
+    },
+    {
+      "id": "node-dtsp",
+      "zoneId": "zone-npci",
+      "label": "RBI DTSP NODE",
+      "subLabel": "Digital Token Platform",
+      "icon": "🏛️",
+      "type": "Central Bank Platform",
+      "status": "EXTERNAL"
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-app-to-waf",
+      "from": "node-app",
+      "to": "node-waf",
+      "direction": "FORWARD",
+      "flowType": "HTTPS_API",
+      "animated": true,
+      "particleColor": "var(--accent-dr)",
+      "speedSec": 2.0,
+      "label": "Client Payment Request (HTTPS:443)"
+    },
+    {
+      "id": "conn-waf-to-nginx",
+      "from": "node-waf",
+      "to": "node-nginx",
+      "direction": "FORWARD",
+      "flowType": "INSPECTED_TRAFFIC",
+      "animated": true,
+      "particleColor": "var(--accent-pr)",
+      "speedSec": 1.5,
+      "label": "Clean Traffic (mTLS)"
+    },
+    {
+      "id": "conn-nginx-to-appgw",
+      "from": "node-nginx",
+      "to": "node-appgw",
+      "direction": "FORWARD",
+      "flowType": "PROXY_PASS",
+      "animated": true,
+      "particleColor": "var(--accent-pr)",
+      "speedSec": 1.5,
+      "label": "Internal API Route"
+    },
+    {
+      "id": "conn-appgw-to-rtsp",
+      "from": "node-appgw",
+      "to": "node-rtsp-app",
+      "direction": "BIDIRECTIONAL",
+      "flowType": "REST_RPC",
+      "animated": true,
+      "particleColor": "var(--accent-pr)",
+      "speedSec": 2.2,
+      "label": "OAuth Auth & Payload"
+    },
+    {
+      "id": "conn-rtsp-to-redis",
+      "from": "node-rtsp-app",
+      "to": "node-redis",
+      "direction": "BIDIRECTIONAL",
+      "flowType": "CACHE_LOOKUP",
+      "animated": true,
+      "particleColor": "var(--accent-amber)",
+      "speedSec": 1.0,
+      "label": "Session Cache Read/Write"
+    },
+    {
+      "id": "conn-rtsp-to-db",
+      "from": "node-rtsp-app",
+      "to": "node-db-rtsp",
+      "direction": "FORWARD",
+      "flowType": "SQL_TRANSACTION",
+      "animated": true,
+      "particleColor": "var(--accent-amber)",
+      "speedSec": 2.5,
+      "label": "Ledger Transaction Commit"
+    },
+    {
+      "id": "conn-rtsp-to-cbs",
+      "from": "node-rtsp-app",
+      "to": "node-cbs",
+      "direction": "BIDIRECTIONAL",
+      "flowType": "ISO8583_API",
+      "animated": true,
+      "particleColor": "var(--accent-pr)",
+      "speedSec": 2.4,
+      "label": "Account Debit / Credit API"
+    },
+    {
+      "id": "conn-rtsp-to-pso",
+      "from": "node-rtsp-app",
+      "to": "node-pso",
+      "direction": "FORWARD",
+      "flowType": "PSO_SWITCH",
+      "animated": true,
+      "particleColor": "var(--accent-rose)",
+      "speedSec": 2.0,
+      "label": "Inter-Bank Settlement Switch"
+    }
+  ]
+}
