@@ -156,25 +156,25 @@ export default function MnaDiagram({ onSelectComponent }) {
           <g transform="translate(35, 90)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Mobile App', type: 'Public Consumer App (iOS / Android)', tech: 'Flutter / Native' })}>
             <rect width="190" height="52" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <text x="15" y="24" fill="var(--svg-card-title)" fontSize="11.5" fontWeight="700" fontFamily="Outfit">📱 E-Rupees APP</text>
-            <text x="15" y="40" fill="var(--svg-card-sub)" fontSize="8.5" fontFamily="JetBrains Mono">erupeeapp.sbi.bank.in</text>
+            <text x="15" y="40" fill="var(--svg-card-sub)" fontSize="8.5" fontFamily="JetBrains Mono">erupeeapp.shabi.bank.in</text>
           </g>
 
           <g transform="translate(35, 155)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'Merchant e-Rupee App', type: 'Merchant Mobile App', tech: 'Android POS / Mobile' })}>
             <rect width="190" height="52" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <text x="15" y="24" fill="var(--svg-card-title)" fontSize="11.5" fontWeight="700" fontFamily="Outfit">🛍️ Merhant APP</text>
-            <text x="15" y="40" fill="var(--svg-card-sub)" fontSize="8.5" fontFamily="JetBrains Mono">merchant.erupee.sbi</text>
+            <text x="15" y="40" fill="var(--svg-card-sub)" fontSize="8.5" fontFamily="JetBrains Mono">merchant.erupee.shabi</text>
           </g>
 
           <g transform="translate(35, 220)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'Merchant Web Portal', type: 'Public Merchant Web', tech: 'React / Nginx' })}>
             <rect width="190" height="52" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <text x="15" y="24" fill="var(--svg-card-title)" fontSize="11.5" fontWeight="700" fontFamily="Outfit">💻 Merhant Web Portal</text>
-            <text x="15" y="40" fill="var(--svg-card-sub)" fontSize="8.5" fontFamily="JetBrains Mono">merchanterupee.sbi</text>
+            <text x="15" y="40" fill="var(--svg-card-sub)" fontSize="8.5" fontFamily="JetBrains Mono">merchanterupee.shabi</text>
           </g>
 
           <g transform="translate(35, 285)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'Admin Portal (AP)', type: 'Operations & Monitoring Portal', tech: 'Angular / Springboot' })}>
             <rect width="190" height="52" rx="10" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.2" />
             <text x="15" y="24" fill="var(--svg-card-title)" fontSize="11.5" fontWeight="700" fontFamily="Outfit">📊 Admin Portal</text>
-            <text x="15" y="40" fill="var(--svg-card-sub)" fontSize="8.5" fontFamily="JetBrains Mono">admin.erupee.sbi</text>
+            <text x="15" y="40" fill="var(--svg-card-sub)" fontSize="8.5" fontFamily="JetBrains Mono">admin.erupee.shabi</text>
           </g>
 
           <g transform="translate(35, 350)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'Merchant Individual & POS', type: 'Acquiring Terminals & Merchant Host Adapter' })}>

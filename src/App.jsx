@@ -107,7 +107,7 @@ export default function App() {
             <ShieldCheck size={20} />
           </div>
           <div className="brand-title">
-            <h1>SBI e-Rupee Architecture Dashboard</h1>
+            <h1>SHABI e-Rupee Architecture Dashboard</h1>
           </div>
         </div>
 

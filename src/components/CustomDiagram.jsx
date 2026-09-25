@@ -420,7 +420,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           {/* ============================================================ */}
 
           {/* 1. e-Rupee Mobile App Card */}
-          <g transform="translate(370, 8)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Mobile App', domain: 'erupeeapp.sbi.bank.in', type: 'Public Mobile App Gateway (iOS / Android)' })}>
+          <g transform="translate(370, 8)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Mobile App', domain: 'erupeeapp.shabi.bank.in', type: 'Public Mobile App Gateway (iOS / Android)' })}>
             <rect width="320" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
@@ -432,7 +432,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               e-Rupee Mobile App
             </text>
             <text x="54" y="38" fill="var(--svg-card-sub)" fontSize="9.5" fontFamily="JetBrains Mono">
-              erupeeapp.sbi.bank.in
+              erupeeapp.shabi.bank.in
             </text>
             <rect x="232" y="15" width="76" height="20" rx="4" fill="var(--accent-pr)" opacity="0.15" />
             <text x="270" y="29" textAnchor="middle" fill="var(--accent-pr)" fontSize="8.5" fontWeight="700" fontFamily="Inter">
@@ -441,7 +441,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* 2. e-Rupee Merchant Web Portal Card */}
-          <g transform="translate(710, 8)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Merchant Web Portal', domain: 'merchanterupee.sbi.bank.in', type: 'Public Merchant Web Gateway' })}>
+          <g transform="translate(710, 8)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ name: 'e-Rupee Merchant Web Portal', domain: 'merchanterupee.shabi.bank.in', type: 'Public Merchant Web Gateway' })}>
             <rect width="320" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
@@ -453,7 +453,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               e-Rupee Merchant Web
             </text>
             <text x="54" y="38" fill="var(--svg-card-sub)" fontSize="9.5" fontFamily="JetBrains Mono">
-              merchanterupee.sbi.bank.in
+              merchanterupee.shabi.bank.in
             </text>
             <rect x="232" y="15" width="76" height="20" rx="4" fill="var(--accent-dr)" opacity="0.15" />
             <text x="270" y="29" textAnchor="middle" fill="var(--accent-dr)" fontSize="8.5" fontWeight="700" fontFamily="Inter">
@@ -487,7 +487,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* PR Public Load Balancer (PLB) */}
-          <g transform="translate(200, 265)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'PLB', name: 'Public Load Balancer (PR PLB)', domain: prConfig?.plbEndpoint || 'cbdc-plb.bank.sbi', type: 'Load Balancer' })}>
+          <g transform="translate(200, 265)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'PLB', name: 'Public Load Balancer (PR PLB)', domain: prConfig?.plbEndpoint || 'cbdc-plb.bank.shabi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -496,22 +496,22 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               </g>
             </g>
             <text x="50" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">Public LB (PLB)</text>
-            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{prConfig?.plbEndpoint || 'cbdc-plb.bank.sbi'}</text>
+            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{prConfig?.plbEndpoint || 'cbdc-plb.bank.shabi'}</text>
           </g>
 
           {/* PR AppBackend Gateway (Positioned Between PLB and ILB) */}
-          <g transform="translate(200, 335)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'AppBackend', name: 'AppBackend Gateway (PR)', domain: 'appbackend.bank.sbi', type: 'Application Backend Gateway' })}>
+          <g transform="translate(200, 335)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'AppBackend', name: 'AppBackend Gateway (PR)', domain: 'appbackend.bank.shabi', type: 'Application Backend Gateway' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
               <text x="17" y="22" textAnchor="middle" fontSize="16">💻</text>
             </g>
             <text x="50" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">AppBackend</text>
-            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">appbackend.bank.sbi</text>
+            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">appbackend.bank.shabi</text>
           </g>
 
           {/* PR Internal Load Balancer (ILB) */}
-          <g transform="translate(200, 405)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'ILB', name: 'Internal Load Balancer (PR ILB)', domain: prConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi', type: 'Load Balancer' })}>
+          <g transform="translate(200, 405)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'ILB', name: 'Internal Load Balancer (PR ILB)', domain: prConfig?.ilbEndpoint || 'cbdc-ilb.bank.shabi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -520,7 +520,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               </g>
             </g>
             <text x="50" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">Internal LB (ILB)</text>
-            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{prConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi'}</text>
+            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{prConfig?.ilbEndpoint || 'cbdc-ilb.bank.shabi'}</text>
           </g>
 
           {/* PR RTSP CORE SERVICES APPLICATION VM CLUSTER */}
@@ -569,12 +569,12 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* INDEPENDENT EXTERNAL PSO SERVICE (OUTSIDE PR SITE BOX AT X=10) */}
-          <g transform="translate(10, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'pso-pr', name: 'PSO Service (PR Rawale)', domain: prConfig?.psoEndpoint || 'pso-pr.bank.sbi', type: 'External Consumed Payment System Operator Service', status: 'ACTIVE' })}>
+          <g transform="translate(10, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'pso-pr', name: 'PSO Service (PR Rawale)', domain: prConfig?.psoEndpoint || 'pso-pr.bank.shabi', type: 'External Consumed Payment System Operator Service', status: 'ACTIVE' })}>
             <rect width="90" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-pr)" strokeWidth="1.5" />
             <rect x="6" y="8" width="30" height="30" rx="8" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
             <text x="21" y="28" textAnchor="middle" fontSize="14">⚙️</text>
             <text x="10" y="54" fill="var(--svg-card-title)" fontSize="10.5" fontWeight="700" fontFamily="Outfit">PSO (PR)</text>
-            <text x="10" y="68" fill="var(--accent-pr)" fontSize="7.5" fontFamily="JetBrains Mono">{prConfig?.psoEndpoint || 'pso-pr.bank.sbi'}</text>
+            <text x="10" y="68" fill="var(--accent-pr)" fontSize="7.5" fontFamily="JetBrains Mono">{prConfig?.psoEndpoint || 'pso-pr.bank.shabi'}</text>
             <rect x="8" y="80" width="74" height="18" rx="4" fill="rgba(16,185,129,0.12)" stroke="var(--accent-pr)" strokeWidth="1" />
             <text x="45" y="92.5" textAnchor="middle" fill="var(--accent-pr)" fontSize="7.5" fontWeight="700" fontFamily="Inter">EXTERNAL PSO</text>
           </g>
@@ -597,7 +597,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             </text>
 
             {/* Inside PR RTSP DB */}
-            <g transform="translate(12, 28)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'rtsp-db', name: 'RTSP DB (PR Rawale)', domain: 'cbdc-rtsp-db.bank.sbi', type: isPRActive ? 'Primary Relational DB (READ WRITE)' : 'Standby Relational DB (READ ONLY)' })}>
+            <g transform="translate(12, 28)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'rtsp-db', name: 'RTSP DB (PR Rawale)', domain: 'cbdc-rtsp-db.bank.shabi', type: isPRActive ? 'Primary Relational DB (READ WRITE)' : 'Standby Relational DB (READ ONLY)' })}>
               <rect width="148" height="66" rx="8" fill="var(--svg-pill-bg)" stroke={isPRActive ? "var(--accent-pr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(8, 6)">
                 <rect width="28" height="28" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -615,7 +615,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             </g>
 
             {/* Inside PR Mint DB */}
-            <g transform="translate(170, 28)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'mint-db', name: 'Mint DB (PR Rawale)', domain: 'cbdc-mint-db.bank.sbi', type: isPRActive ? 'Primary Mint DB (READ WRITE)' : 'Standby Mint DB (READ ONLY)' })}>
+            <g transform="translate(170, 28)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'mint-db', name: 'Mint DB (PR Rawale)', domain: 'cbdc-mint-db.bank.shabi', type: isPRActive ? 'Primary Mint DB (READ WRITE)' : 'Standby Mint DB (READ ONLY)' })}>
               <rect width="148" height="66" rx="8" fill="var(--svg-pill-bg)" stroke={isPRActive ? "var(--accent-pr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(8, 6)">
                 <rect width="28" height="28" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -649,7 +649,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* DR Public Load Balancer (PLB) */}
-          <g transform="translate(1000, 265)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'PLB', name: 'Public Load Balancer (DR PLB)', domain: drConfig?.plbEndpoint || 'cbdc-plb.bank.sbi', type: 'Load Balancer' })}>
+          <g transform="translate(1000, 265)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'PLB', name: 'Public Load Balancer (DR PLB)', domain: drConfig?.plbEndpoint || 'cbdc-plb.bank.shabi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -658,22 +658,22 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               </g>
             </g>
             <text x="50" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">Public LB (PLB)</text>
-            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{drConfig?.plbEndpoint || 'cbdc-plb.bank.sbi'}</text>
+            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{drConfig?.plbEndpoint || 'cbdc-plb.bank.shabi'}</text>
           </g>
 
           {/* DR AppBackend Gateway (Positioned Between PLB and ILB) */}
-          <g transform="translate(1000, 335)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'AppBackend', name: 'AppBackend Gateway (DR)', domain: 'appbackend.bank.sbi', type: 'Application Backend Gateway' })}>
+          <g transform="translate(1000, 335)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'AppBackend', name: 'AppBackend Gateway (DR)', domain: 'appbackend.bank.shabi', type: 'Application Backend Gateway' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
               <text x="17" y="22" textAnchor="middle" fontSize="16">💻</text>
             </g>
             <text x="50" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">AppBackend</text>
-            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">appbackend.bank.sbi</text>
+            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">appbackend.bank.shabi</text>
           </g>
 
           {/* DR Internal Load Balancer (ILB) */}
-          <g transform="translate(1000, 405)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'ILB', name: 'Internal Load Balancer (DR ILB)', domain: drConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi', type: 'Load Balancer' })}>
+          <g transform="translate(1000, 405)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'ILB', name: 'Internal Load Balancer (DR ILB)', domain: drConfig?.ilbEndpoint || 'cbdc-ilb.bank.shabi', type: 'Load Balancer' })}>
             <rect width="200" height="50" rx="10" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <g transform="translate(8, 8)">
               <rect width="34" height="34" rx="8" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -682,7 +682,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
               </g>
             </g>
             <text x="50" y="24" fill="var(--svg-card-title)" fontSize="12" fontWeight="700" fontFamily="Outfit">Internal LB (ILB)</text>
-            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{drConfig?.ilbEndpoint || 'cbdc-ilb.bank.sbi'}</text>
+            <text x="50" y="40" fill="var(--svg-card-sub)" fontSize="10" fontFamily="JetBrains Mono">{drConfig?.ilbEndpoint || 'cbdc-ilb.bank.shabi'}</text>
           </g>
 
           {/* DR RTSP CORE SERVICES APPLICATION VM CLUSTER */}
@@ -731,12 +731,12 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
           </g>
 
           {/* INDEPENDENT EXTERNAL PSO SERVICE (OUTSIDE DR SITE BOX AT X=1300) */}
-          <g transform="translate(1300, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'pso-dr', name: 'PSO Service (DR Gachibowli)', domain: drConfig?.psoEndpoint || 'pso-dr.bank.sbi', type: 'External Consumed Payment System Operator Service', status: isDRActive ? 'ACTIVE' : 'STANDBY' })}>
+          <g transform="translate(1300, 475)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'pso-dr', name: 'PSO Service (DR Gachibowli)', domain: drConfig?.psoEndpoint || 'pso-dr.bank.shabi', type: 'External Consumed Payment System Operator Service', status: isDRActive ? 'ACTIVE' : 'STANDBY' })}>
             <rect width="90" height="110" rx="12" fill="var(--svg-card-bg)" stroke="var(--accent-dr)" strokeWidth="1.5" />
             <rect x="6" y="8" width="30" height="30" rx="8" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
             <text x="21" y="28" textAnchor="middle" fontSize="14">⚙️</text>
             <text x="10" y="54" fill="var(--svg-card-title)" fontSize="10.5" fontWeight="700" fontFamily="Outfit">PSO (DR)</text>
-            <text x="10" y="68" fill="var(--accent-dr)" fontSize="7.5" fontFamily="JetBrains Mono">{drConfig?.psoEndpoint || 'pso-dr.bank.sbi'}</text>
+            <text x="10" y="68" fill="var(--accent-dr)" fontSize="7.5" fontFamily="JetBrains Mono">{drConfig?.psoEndpoint || 'pso-dr.bank.shabi'}</text>
             <rect x="8" y="80" width="74" height="18" rx="4" fill="rgba(59,130,246,0.12)" stroke="var(--accent-dr)" strokeWidth="1" />
             <text x="45" y="92.5" textAnchor="middle" fill="var(--accent-dr)" fontSize="7.5" fontWeight="700" fontFamily="Inter">EXTERNAL PSO</text>
           </g>
@@ -759,7 +759,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             </text>
 
             {/* Inside DR RTSP DB */}
-            <g transform="translate(12, 28)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'rtsp-db', name: 'RTSP DB (DR Gachibowli)', domain: 'cbdc-rtsp-db.bank.sbi', type: isDRActive ? 'Primary Relational DB (READ WRITE)' : 'Standby Relational DB (READ ONLY)' })}>
+            <g transform="translate(12, 28)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'rtsp-db', name: 'RTSP DB (DR Gachibowli)', domain: 'cbdc-rtsp-db.bank.shabi', type: isDRActive ? 'Primary Relational DB (READ WRITE)' : 'Standby Relational DB (READ ONLY)' })}>
               <rect width="148" height="66" rx="8" fill="var(--svg-pill-bg)" stroke={isDRActive ? "var(--accent-dr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(8, 6)">
                 <rect width="28" height="28" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />
@@ -777,7 +777,7 @@ export default function CustomDiagram({ mode, activeStep, onSelectComponent, com
             </g>
 
             {/* Inside DR Mint DB */}
-            <g transform="translate(170, 28)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'mint-db', name: 'Mint DB (DR Gachibowli)', domain: 'cbdc-mint-db.bank.sbi', type: isDRActive ? 'Primary Mint DB (READ WRITE)' : 'Standby Mint DB (READ ONLY)' })}>
+            <g transform="translate(170, 28)" style={{ cursor: 'pointer' }} onClick={() => onSelectComponent({ key: 'mint-db', name: 'Mint DB (DR Gachibowli)', domain: 'cbdc-mint-db.bank.shabi', type: isDRActive ? 'Primary Mint DB (READ WRITE)' : 'Standby Mint DB (READ ONLY)' })}>
               <rect width="148" height="66" rx="8" fill="var(--svg-pill-bg)" stroke={isDRActive ? "var(--accent-dr)" : "var(--svg-pill-stroke)"} strokeWidth="1.5" />
               <g transform="translate(8, 6)">
                 <rect width="28" height="28" rx="6" fill="var(--svg-pill-bg)" stroke="var(--svg-card-stroke)" strokeWidth="1" />

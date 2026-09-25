@@ -9,16 +9,16 @@ export const SITES_DATA = {
     dnsTarget: '10.x.x.252',
     status: 'ACTIVE',
     badgeColor: '#10B981',
-    primaryDb: 'cbdc-rtsp-db.bank.sbi (Primary R/W)',
-    mintDb: 'cbdc-mint-db.bank.sbi (Primary R/W)',
-    plbEndpoint: 'cbdc-plb.bank.sbi',
-    ilbEndpoint: 'cbdc-ilb.bank.sbi',
-    psoEndpoint: 'pso-pr.bank.sbi',
+    primaryDb: 'cbdc-rtsp-db.bank.shabi (Primary R/W)',
+    mintDb: 'cbdc-mint-db.bank.shabi (Primary R/W)',
+    plbEndpoint: 'cbdc-plb.bank.shabi',
+    ilbEndpoint: 'cbdc-ilb.bank.shabi',
+    psoEndpoint: 'pso-pr.bank.shabi',
     apps: ['RTSP Core Service', 'CBDC Minting Service', 'Wallet Service'],
     endpoints: [
-      { name: 'e-Rupee Mobile App', url: 'erupeeapp.sbi.bank.in' },
-      { name: 'Merchant e-Rupee App', url: 'merchanterupee.sbi.bank.in' },
-      { name: 'CBDC Admin Portal', url: 'admin.erupee.bank.sbi' }
+      { name: 'e-Rupee Mobile App', url: 'erupeeapp.shabi.bank.in' },
+      { name: 'Merchant e-Rupee App', url: 'merchanterupee.shabi.bank.in' },
+      { name: 'CBDC Admin Portal', url: 'admin.erupee.bank.shabi' }
     ]
   },
   DR: {
@@ -29,31 +29,31 @@ export const SITES_DATA = {
     dnsTarget: '10.x.x.230',
     status: 'STANDBY',
     badgeColor: '#3B82F6',
-    primaryDb: 'cbdc-rtsp-db.bank.sbi (Data Guard Standby)',
-    mintDb: 'cbdc-mint-db.bank.sbi (Data Guard Standby)',
-    plbEndpoint: 'cbdc-plb.bank.sbi (Standby)',
-    ilbEndpoint: 'cbdc-ilb.bank.sbi (Standby)',
-    psoEndpoint: 'pso-dr.bank.sbi (Standby)',
+    primaryDb: 'cbdc-rtsp-db.bank.shabi (Data Guard Standby)',
+    mintDb: 'cbdc-mint-db.bank.shabi (Data Guard Standby)',
+    plbEndpoint: 'cbdc-plb.bank.shabi (Standby)',
+    ilbEndpoint: 'cbdc-ilb.bank.shabi (Standby)',
+    psoEndpoint: 'pso-dr.bank.shabi (Standby)',
     apps: ['RTSP Core Service (Standby)', 'CBDC Minting Service (Standby)', 'Wallet Service (Standby)'],
     endpoints: [
-      { name: 'e-Rupee Mobile App', url: 'erupeeapp.sbi.bank.in' },
-      { name: 'Merchant e-Rupee App', url: 'merchanterupee.sbi.bank.in' },
-      { name: 'CBDC Admin Portal', url: 'admin.erupee.bank.sbi' }
+      { name: 'e-Rupee Mobile App', url: 'erupeeapp.shabi.bank.in' },
+      { name: 'Merchant e-Rupee App', url: 'merchanterupee.shabi.bank.in' },
+      { name: 'CBDC Admin Portal', url: 'admin.erupee.bank.shabi' }
     ]
   }
 };
 
 export const COMMON_SERVICES = [
-  { id: 'kafka', number: '1', name: 'KAFKA', endpoint: 'kafka.bank.sbi', type: 'Messaging & Event Stream', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'abas', number: '2', name: 'ABAS', endpoint: 'abas-attestation.bank.sbi', type: 'Attestation & Security', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'vld', number: '3', name: 'Validation SVC', endpoint: 'validation-svc.bank.sbi', type: 'Txn Validation Service', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'eis', number: '4', name: 'EIS', endpoint: 'eis.sbi.co.in', type: 'Enterprise Integration System', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'upi', number: '5', name: 'UPI', endpoint: 'upi.sbi.co.in', type: 'UPI Gateway Payment System', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'sms', number: '6', name: 'SMS', endpoint: 'bulksms.sbi.co.in', type: 'SMS Gateway Service', prStatus: 'Connected', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'prm', number: '7', name: 'PRM', endpoint: 'prm.sbi.co.in', type: 'Risk & Fraud Monitoring', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'sfg', number: '8', "name": 'SFG', endpoint: 'sfg.sbi.co.in', type: 'Secure File Gateway', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'ldap', number: '9', name: 'LDAP', endpoint: 'ad.sbi', type: 'Active Directory Identity', prStatus: 'Connected', drStatus: 'Connected' },
-  { id: 'VMN', number: '10', name: 'VMN', endpoint: 'vmn.sbi.co.in', type: 'Virtual Mobile Number Gateway', prStatus: 'Connected', drStatus: 'Connected' }
+  { id: 'kafka', number: '1', name: 'KAFKA', endpoint: 'kafka.bank.shabi', type: 'Messaging & Event Stream', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'abas', number: '2', name: 'ABAS', endpoint: 'abas-attestation.bank.shabi', type: 'Attestation & Security', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'vld', number: '3', name: 'Validation SVC', endpoint: 'validation-svc.bank.shabi', type: 'Txn Validation Service', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'eis', number: '4', name: 'EIS', endpoint: 'eis.shabi.co.in', type: 'Enterprise Integration System', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'upi', number: '5', name: 'UPI', endpoint: 'upi.shabi.co.in', type: 'UPI Gateway Payment System', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'sms', number: '6', name: 'SMS', endpoint: 'bulksms.shabi.co.in', type: 'SMS Gateway Service', prStatus: 'Connected', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'prm', number: '7', name: 'PRM', endpoint: 'prm.shabi.co.in', type: 'Risk & Fraud Monitoring', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'sfg', number: '8', "name": 'SFG', endpoint: 'sfg.shabi.co.in', type: 'Secure File Gateway', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'ldap', number: '9', name: 'LDAP', endpoint: 'ad.shabi', type: 'Active Directory Identity', prStatus: 'Connected', drStatus: 'Connected' },
+  { id: 'VMN', number: '10', name: 'VMN', endpoint: 'vmn.shabi.co.in', type: 'Virtual Mobile Number Gateway', prStatus: 'Connected', drStatus: 'Connected' }
 ];
 
 export const FAILOVER_STEPS = [
@@ -63,7 +63,7 @@ export const FAILOVER_STEPS = [
     duration: '1 Min',
     action: 'Enable Maintenance Mode in Web for Both Sites',
     target: 'Web Layer (WAF-PR & WAF-DR)',
-    details: 'Displays maintenance banner to end users on erupeeapp.sbi.bank.in and merchanterupee.sbi.bank.in to prevent in-flight transactions.',
+    details: 'Displays maintenance banner to end users on erupeeapp.shabi.bank.in and merchanterupee.shabi.bank.in to prevent in-flight transactions.',
     log: '[STEP 1/11] Executing Web Maintenance Mode toggle on WAF-PR-252 and WAF-DR-230... Response: HTTP 503 Maintenance Enabled.'
   },
   {
@@ -72,7 +72,7 @@ export const FAILOVER_STEPS = [
     duration: '1 Min',
     action: 'Point DNS to target site IP',
     target: 'External DNS (Alibaba Cloud / Provider DNS)',
-    details: 'Update public A-records for erupeeapp.sbi.bank.in and merchanterupee.sbi.bank.in to target site WAF IP.',
+    details: 'Update public A-records for erupeeapp.shabi.bank.in and merchanterupee.shabi.bank.in to target site WAF IP.',
     log: '[STEP 2/11] Updating DNS A-Record target to Target Site WAF IP... TTL set to 60s. DNS Propagation initialized.'
   },
   {
@@ -80,7 +80,7 @@ export const FAILOVER_STEPS = [
     title: 'Stop PLB at Source Site',
     duration: '1 Min',
     action: 'Stop PLB in Source Site',
-    target: 'Source Site PLB (cbdc-plb.bank.sbi)',
+    target: 'Source Site PLB (cbdc-plb.bank.shabi)',
     details: 'Drains existing HTTP connections on Public Load Balancer at source site to ensure zero pending requests.',
     log: '[STEP 3/11] Gracefully stopping PLB listener on Source Site... 0 active client sockets remaining.'
   },
@@ -89,9 +89,9 @@ export const FAILOVER_STEPS = [
     title: 'Update Internal DNS',
     duration: '1 Min',
     action: 'Update DNS of internal DNS point to target site',
-    target: 'Internal DNS (ad.sbi / PrivateZone)',
-    details: 'Update internal routing tables so backend services route to target site ILB (cbdc-ilb.bank.sbi).',
-    log: '[STEP 4/11] Modifying Internal PrivateZone DNS mapping to Target ILB IP... Reloaded ad.sbi zones.'
+    target: 'Internal DNS (ad.shabi / PrivateZone)',
+    details: 'Update internal routing tables so backend services route to target site ILB (cbdc-ilb.bank.shabi).',
+    log: '[STEP 4/11] Modifying Internal PrivateZone DNS mapping to Target ILB IP... Reloaded ad.shabi zones.'
   },
   {
     step: 5,

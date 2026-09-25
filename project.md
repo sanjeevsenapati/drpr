@@ -1,4 +1,4 @@
-# SBI e-Rupee PR/DR Architecture & Switchover Dashboard - Project State & Resume Guide
+# SHABI e-Rupee PR/DR Architecture & Switchover Dashboard - Project State & Resume Guide
 
 This file documents the complete state of the project, all completed user requirements, configuration schemas, and step-by-step instructions for future AI assistants or engineers to resume and extend the codebase.
 
@@ -7,7 +7,7 @@ This file documents the complete state of the project, all completed user requir
 ## 1. Project Overview & Operational Status
 
 - **Project Name**: `rtsp-dr-pr-dashboard`
-- **Primary Objective**: Interactive visual dashboard representing SBI e-Rupee (CBDC) PR/DR Site Architecture (Rawale DC vs. Gachibowli DC), failover flows, component specifications, and manual engineer switchover.
+- **Primary Objective**: Interactive visual dashboard representing SHABI e-Rupee (CBDC) PR/DR Site Architecture (Rawale DC vs. Gachibowli DC), failover flows, component specifications, and manual engineer switchover.
 - **Tech Stack**: React 18, Vite 5, Custom SVG rendering engine, Lucide React icons, Vanilla CSS3 with variables.
 - **Build Status**: Verified with `npm run build` (0 errors).
 - **Local Dev Server**: Running on `http://localhost:3001`.
@@ -102,3 +102,11 @@ npm run preview
 git add .
 git commit -m "your commit message"
 ```
+
+---
+
+## 6. Git Branching Strategy
+
+The repository follows a two-branch workflow:
+- **`main`**: The primary branch containing the actual application source code (React/Vite).
+- **`website`**: An orphan branch containing only the compiled static assets (`dist` contents) intended for web hosting and deployment.

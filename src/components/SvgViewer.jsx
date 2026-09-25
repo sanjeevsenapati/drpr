@@ -103,20 +103,20 @@ export default function SvgViewer({ mode, activeStep, onSelectComponent, searchQ
     const clickableNodes = svgElement.querySelectorAll('g, rect, text');
     const clickableKeywords = [
       { key: 'WAF', name: 'Web Application Firewall (WAF)', type: 'Security & Edge', ipPR: 'WAF-PR-252', ipDR: 'WAF-DR-230' },
-      { key: 'PLB', name: 'Public Load Balancer (PLB)', type: 'Network Load Balancer', domain: 'cbdc-plb.bank.sbi' },
-      { key: 'ILB', name: 'Internal Load Balancer (ILB)', type: 'Private Network Load Balancer', domain: 'cbdc-ilb.bank.sbi' },
-      { key: 'KAFKA', name: 'Apache Kafka Cluster', type: 'Message Broker & Event Hub', domain: 'kafka.bank.sbi' },
-      { key: 'ABAS', name: 'ABAS Attestation Service', type: 'Security & Attestation', domain: 'abas-attestation.bank.sbi' },
-      { key: 'Validation', name: 'Transaction Validation SVC', type: 'Core Microservice', domain: 'validation-svc.bank.sbi' },
-      { key: 'EIS', name: 'Enterprise Integration System (EIS)', type: 'Core Banking Gateway', domain: 'eis.sbi.co.in' },
-      { key: 'UPI', name: 'UPI Payment Gateway', type: 'Payment Processing Service', domain: 'upi.sbi.co.in' },
-      { key: 'SMS', name: 'Bulk SMS Gateway', type: 'Notification System', domain: 'bulksms.sbi.co.in' },
-      { key: 'PRM', name: 'Risk Management (PRM)', type: 'Fraud Detection Engine', domain: 'prm.sbi.co.in' },
-      { key: 'LDAP', name: 'Active Directory (LDAP)', type: 'Identity & Authentication', domain: 'ad.sbi' },
+      { key: 'PLB', name: 'Public Load Balancer (PLB)', type: 'Network Load Balancer', domain: 'cbdc-plb.bank.shabi' },
+      { key: 'ILB', name: 'Internal Load Balancer (ILB)', type: 'Private Network Load Balancer', domain: 'cbdc-ilb.bank.shabi' },
+      { key: 'KAFKA', name: 'Apache Kafka Cluster', type: 'Message Broker & Event Hub', domain: 'kafka.bank.shabi' },
+      { key: 'ABAS', name: 'ABAS Attestation Service', type: 'Security & Attestation', domain: 'abas-attestation.bank.shabi' },
+      { key: 'Validation', name: 'Transaction Validation SVC', type: 'Core Microservice', domain: 'validation-svc.bank.shabi' },
+      { key: 'EIS', name: 'Enterprise Integration System (EIS)', type: 'Core Banking Gateway', domain: 'eis.shabi.co.in' },
+      { key: 'UPI', name: 'UPI Payment Gateway', type: 'Payment Processing Service', domain: 'upi.shabi.co.in' },
+      { key: 'SMS', name: 'Bulk SMS Gateway', type: 'Notification System', domain: 'bulksms.shabi.co.in' },
+      { key: 'PRM', name: 'Risk Management (PRM)', type: 'Fraud Detection Engine', domain: 'prm.shabi.co.in' },
+      { key: 'LDAP', name: 'Active Directory (LDAP)', type: 'Identity & Authentication', domain: 'ad.shabi' },
       { key: 'RAWALE', name: 'Primary Region (PR) Rawale', type: 'Data Center Site' },
       { key: 'GACHIBAWLI', name: 'Disaster Recovery (DR) Gachibowli', type: 'Data Center Site' },
-      { key: 'rtsp-db', name: 'RTSP Oracle Database', type: 'Core Relational DB', domain: 'cbdc-rtsp-db.bank.sbi' },
-      { key: 'mint-db', name: 'Minting Oracle Database', type: 'CBDC Ledger DB', domain: 'cbdc-mint-db.bank.sbi' }
+      { key: 'rtsp-db', name: 'RTSP Oracle Database', type: 'Core Relational DB', domain: 'cbdc-rtsp-db.bank.shabi' },
+      { key: 'mint-db', name: 'Minting Oracle Database', type: 'CBDC Ledger DB', domain: 'cbdc-mint-db.bank.shabi' }
     ];
 
     const handleClick = (e) => {

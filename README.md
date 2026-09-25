@@ -1,6 +1,6 @@
-# SBI e-Rupee (CBDC) RTSP PR/DR Architecture & Switchover Dashboard
+# SHABI e-Rupee (CBDC) RTSP PR/DR Architecture & Switchover Dashboard
 
-An interactive, real-time enterprise architecture dashboard visualizing the **Primary Region (PR - Rawale DC)** and **Disaster Recovery Region (DR - Gachibowli DC)** infrastructure for the **SBI e-Rupee (Central Bank Digital Currency - CBDC)** system.
+An interactive, real-time enterprise architecture dashboard visualizing the **Primary Region (PR - Rawale DC)** and **Disaster Recovery Region (DR - Gachibowli DC)** infrastructure for the **SHABI e-Rupee (Central Bank Digital Currency - CBDC)** system.
 
 ---
 
@@ -114,15 +114,15 @@ To edit site architecture, IP addresses, microservices, databases, or common ser
     "siteName": "Primary Region (RAWALE DC)",
     "wafName": "WAF-PR-252",
     "wafIp": "10.x.x.252",
-    "plbEndpoint": "cbdc-plb.bank.sbi",
-    "ilbEndpoint": "cbdc-ilb.bank.sbi"
+    "plbEndpoint": "cbdc-plb.bank.shabi",
+    "ilbEndpoint": "cbdc-ilb.bank.shabi"
   },
   "DR": {
     "siteName": "Disaster Recovery Region (GACHIBOWLI DC)",
     "wafName": "WAF-DR-230",
     "wafIp": "10.x.x.230",
-    "plbEndpoint": "cbdc-plb.bank.sbi",
-    "ilbEndpoint": "cbdc-ilb.bank.sbi"
+    "plbEndpoint": "cbdc-plb.bank.shabi",
+    "ilbEndpoint": "cbdc-ilb.bank.shabi"
   }
 }
 ```
@@ -206,4 +206,12 @@ This compiles Vite production bundles into `dist/` with zero errors.
 ---
 
 ## License & Maintainer
-Maintained for **SBI e-Rupee (CBDC) Enterprise Operations Team**.
+Maintained for **SHABI e-Rupee (CBDC) Enterprise Operations Team**.
+
+---
+
+## Git Branching Strategy
+
+This repository uses two main branches:
+- **`main`**: Contains the source code of the application.
+- **`website`**: Contains the static build files (from the `dist` directory) to serve the dashboard.

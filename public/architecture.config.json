@@ -1,7 +1,7 @@
 {
   "diagram": {
     "id": "rtsp-mna-topology",
-    "title": "SBI e-Rupee Architecture Dashboard",
+    "title": "SHABI e-Rupee Architecture Dashboard",
     "version": "2.0",
     "viewBox": {
       "width": 1440,
@@ -55,7 +55,7 @@
       "id": "node-app",
       "zoneId": "zone-client",
       "label": "e-Rupee Mobile App",
-      "subLabel": "erupeeapp.sbi.bank.in",
+      "subLabel": "erupeeapp.shabi.bank.in",
       "icon": "📱",
       "type": "Consumer Wallet App",
       "techStack": "Flutter / Native iOS & Android"
@@ -64,7 +64,7 @@
       "id": "node-merchant-app",
       "zoneId": "zone-client",
       "label": "Merchant App",
-      "subLabel": "merchant.erupee.sbi",
+      "subLabel": "merchant.erupee.shabi",
       "icon": "🛍️",
       "type": "Merchant Acceptance App",
       "techStack": "Android POS / Mobile"
@@ -76,7 +76,7 @@
       "subLabel": "DDoS & OWASP Shield",
       "icon": "🛡️",
       "type": "Edge Security",
-      "ipAddress": "10.10.2.252"
+      "ipAddress": "192.168.1.1"
     },
     {
       "id": "node-nginx",
